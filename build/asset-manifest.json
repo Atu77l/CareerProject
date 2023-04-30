@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.90268ce6.css",
+    "main.js": "/static/js/main.5483c707.js",
+    "static/js/787.17632baf.chunk.js": "/static/js/787.17632baf.chunk.js",
+    "static/media/christin-hume-mfB1B1s4sMc-unsplash.jpg": "/static/media/christin-hume-mfB1B1s4sMc-unsplash.b66571d38c615376ff77.jpg",
+    "static/media/domenico-loia-hGV2TfOh0ns-unsplash.jpg": "/static/media/domenico-loia-hGV2TfOh0ns-unsplash.c641bc777a070dc61899.jpg",
+    "static/media/ilya-pavlov-OqtafYT5kTw-unsplash.jpg": "/static/media/ilya-pavlov-OqtafYT5kTw-unsplash.7d535815e88e29dd7060.jpg",
+    "static/media/Teal Modern Company Logo.png": "/static/media/Teal Modern Company Logo.700a32b0a4b74f5055fc.png",
+    "index.html": "/index.html",
+    "main.90268ce6.css.map": "/static/css/main.90268ce6.css.map",
+    "main.5483c707.js.map": "/static/js/main.5483c707.js.map",
+    "787.17632baf.chunk.js.map": "/static/js/787.17632baf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90268ce6.css",
+    "static/js/main.5483c707.js"
+  ]
+}
