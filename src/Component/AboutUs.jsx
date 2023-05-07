@@ -3,23 +3,27 @@ import image5 from "../Image/Teal Modern Company Logo.png";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import {Link} from "react-router-dom"
 const AboutUs = () => {
   return (
     <>
-      <div className="bg-[#abc1f8]  h-24 w-screen flex flex-row">
+
+
+      <div className="bg-[#7eaad5]  h-24 w-screen flex flex-row text-white">
         <img src={image5} alt="" className="rounded-3xl mt-2 ml-20 mb-2" />
-        <div
+        <Link to='/'>  <div
           className="mt-9 text-2xl  font-medium hover:underline"
           style={{ marginLeft: "800px" }}
         >
           Home
-        </div>
-        <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
+        </div></Link>
+
+         <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
           About Us{" "}
         </div>
-        <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
+        <Link to='/contact'>   <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
           Contact
-        </div>
+        </div></Link> 
       </div>
       <div className="ml-10 mt-10 font-semibold text-4xl font-serif">
         ABOUT US
@@ -38,7 +42,7 @@ Overall, Fast Career appears to have the potential to be a valuable resource for
           <br /><br/>
         </p>
 
-        <div className="bg-[#abc1f8] w-screen h-40 ">
+        <div className="bg-[#7eaad5] w-screen h-40 ">
           <div className="text-center pt-10">
             <LinkedInIcon sx={{ color: "white" }} />
             <TelegramIcon sx={{ color: "white" }} className="ml-3" />

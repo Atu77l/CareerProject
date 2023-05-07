@@ -25,7 +25,7 @@ const Carousel = () => {
               className="d-block"
               src={image1}
               alt="First slide"
-              style={{ height: "500px", width: "1500px" }}
+              style={{ height: "400px", width: "1500px" }}
             />
           </div>
           <div className="carousel-item">
@@ -33,7 +33,7 @@ const Carousel = () => {
               className="d-block"
               src={image2}
               alt="Second slide"
-              style={{ height: "500px", width: "1500px" }}
+              style={{ height: "400px", width: "1500px" }}
             />
           </div>
           <div className="carousel-item">
@@ -41,7 +41,7 @@ const Carousel = () => {
               className="d-block"
               src={image3}
               alt="Third slide"
-              style={{ height: "500px", width: "1500px" }}
+              style={{ height: "400px", width: "1500px" }}
             />
           </div>
         </div>

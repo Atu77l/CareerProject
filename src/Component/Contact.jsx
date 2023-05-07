@@ -1,25 +1,59 @@
-import React from "react";
+import React,{useState} from "react";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import AttachFileIcon from "@mui/icons-material/AttachFile";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import image5 from "../Image/Teal Modern Company Logo.png";
+import {Link} from 'react-router-dom'
+import axios from "axios";
 
 const Contact = () => {
+  const [name,setname]=useState("")
+  const [message,setmessage]=useState("")
+  const [phone,setphone]=useState("")
+  const [email,setemail]=useState("")
+
+  const onSubmit=()=>{
+    const data={"name":name,"email":email,"phone":phone,"message":message}
+    console.log(data)
+
+    let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:4000/contact',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+      
+      
+      axios.request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        setname("")
+        setemail("")
+        setphone("")
+        setmessage("")
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   return (
     <>
-      <div className="bg-[#abc1f8] h-24 w-screen flex flex-row">
+      <div className="bg-[#7eaad5] h-24 w-screen flex flex-row text-white">
         <img src={image5} alt="" className="rounded-3xl mt-2 ml-20 mb-2" />
-        <div
+     <Link to='/'>   <div
           className="mt-9 text-2xl  font-medium hover:underline"
           style={{ marginLeft: "800px" }}
         >
           Home
-        </div>
-        <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
+        </div></Link>
+
+       <Link to='/about'> <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
           About Us{" "}
-        </div>
-        <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
+        </div></Link>
+        <div className="mt-9 text-2xl pl-10 font-medium ">
           Contact
         </div>
       </div>
@@ -34,34 +68,37 @@ const Contact = () => {
           <input
             type="text"
             placeholder="Name*"
-            className=" p-3 h-14  border-2 border-[gray] rounded-lg"
+            value={name}
+            onChange={(e)=>{setname(e.target.value)}}
+            className=" p-4 h-14 mt-5  border-2 border-[gray] rounded-lg"
             style={{ width: "800px" }}
           />
           <input
             type="text"
             placeholder="Email*"
-            className=" p-3 mt-2  h-14  border-2 border-[gray] rounded-lg"
+            value={email}
+            onChange={(e)=>{setemail(e.target.value)}}
+            className=" p-4 mt-3  h-14  border-2 border-[gray] rounded-lg"
             style={{ width: "800px" }}
           />
           <input
             type="text"
             placeholder="Phone No*"
-            className=" p-3 mt-2   h-14  border-2 border-[gray] rounded-lg"
+            value={phone}
+            onChange={(e)=>{setphone(e.target.value)}}
+            className=" p-4 mt-3   h-14  border-2 border-[gray] rounded-lg"
             style={{ width: "800px" }}
           />
           <input
             type="text"
             placeholder="Message"
-            className=" p-3 mt-2  h-14 border-2 border-[gray] rounded-lg"
+            value={message}
+            onChange={(e)=>{setmessage(e.target.value)}}
+            className=" p-4 mt-3  h-14 border-2 border-[gray] rounded-lg"
             style={{ width: "800px" }}
           />
-          <div className="mt-2 font-medium text">
-            <AttachFileIcon />
-            Attach Files
-          </div>
-
           <div className="text-auto">
-            <button className="h-14 mt-24 ml-80 w-40 bg-[green] rounded-2xl  border-none">
+            <button className="h-14 mt-24 ml-80 w-40 bg-[#287dd1] rounded-3xl font-medium text-white" onClick={onSubmit}>
               Send Message
             </button>
             <div className="pl-16 mt-5 mb-5">
@@ -72,7 +109,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="bg-[#abc1f8] w-screen h-40 ">
+        <div className="bg-[#7eaad5] w-screen h-40 ">
           <div className="text-center pt-10">
             <LinkedInIcon sx={{ color: "white" }} />
             <TelegramIcon sx={{ color: "white" }} className="ml-3" />
