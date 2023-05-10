@@ -54,8 +54,11 @@ const styles = StyleSheet.create({
   heading: {
     fontWeight: 300,
     fontSize: 16
+  },
+  hobbies:{
+    flexDirection:"row",
+    marginLeft:5
   }
-
 
 });
 
@@ -63,7 +66,6 @@ const MyDocument = ({ data }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-      <Text>Hello World</Text>
        <Text style={styles.name}>{data.name}</Text>
         <Text style={styles.title}>{data.title}</Text>
        <Text style={styles.text}>Email: {data.email}</Text>
@@ -77,9 +79,11 @@ const MyDocument = ({ data }) => (
           return (
 
             <View key={item.id} style={styles.experience}>
-              <Text style={styles.text}>Degree: {item.title}</Text>
-              <Text style={styles.text}>School: {item.school}</Text>
-              <Text style={styles.text}>Graduation Date: {item.graduationDate}</Text>
+              <Text style={styles.text}>Course: {item.course}</Text>
+              <Text style={styles.text}>School/College: {item.school}</Text>
+              <Text style={styles.text}>Percent: {item.percent}</Text>
+              <Text style={styles.text}>Year: {item.year}</Text>
+
             </View>
           )
         }) : ""}
@@ -92,8 +96,7 @@ const MyDocument = ({ data }) => (
               <Text styles={styles.box1}>
                 <Text style={styles.experiencetitle}>Title: {exp.title}                                               </Text>
                 <Text style={styles.box}>
-                  <Text style={styles.text}>{exp.startDate}-</Text>
-                  <Text style={styles.text}>{exp.endDate}</Text>
+                  <Text style={styles.text}>{exp.date}</Text>
                 </Text>
               </Text>
               <Text style={styles.text}>Company: {exp.company}</Text>
@@ -105,17 +108,13 @@ const MyDocument = ({ data }) => (
         <Text style={styles.horizontal}></Text>
 
         <Text style={styles.subtitle}>Project</Text>
-        {data.experience.length > 0 ? data.experience.map((exp, id) => {
+        {data.project.length > 0 ? data.project.map((exp, id) => {
           return (
             <View key={exp.id} style={styles.experience}>
               <Text styles={styles.box1}>
-                <Text style={styles.experiencetitle}>Title: {exp.title}                                                 </Text>
-                <Text style={styles.box}>
-                  <Text style={styles.text}>{exp.startDate}-</Text>
-                  <Text style={styles.text}>{exp.endDate}</Text>
-                </Text>
+                <Text style={styles.experiencetitle}>Project Name: {exp.title}                                                 </Text>
               </Text>
-              <Text style={styles.text}>Company: {exp.company}</Text>
+              <Text style={styles.text}>Tech Used: {exp.tech}</Text>
               <Text style={styles.text}>Description: {exp.description}</Text>
             </View>
           )
@@ -125,7 +124,7 @@ const MyDocument = ({ data }) => (
         <Text style={styles.subtitle}>Skills</Text>
         {data.skills.length > 0 ? data.skills.map((skill, id) => {
           return (
-            <View key={id} style={styles.experience}>
+            <View key={id} style={styles.hobbies}>
               <Text style={styles.text}>{skill}</Text>
             </View>
           )
@@ -146,7 +145,7 @@ const MyDocument = ({ data }) => (
         <Text style={styles.subtitle}>Hobbies and Interest</Text>
         {data.hobbies.length > 0 ? data.hobbies.map((exp, id) => {
           return (
-            <View key={exp.id} style={styles.experience}>
+            <View key={exp.id} style={styles.hobbies}>
               <Text style={styles.text}>{exp}</Text>
             </View>
           )
