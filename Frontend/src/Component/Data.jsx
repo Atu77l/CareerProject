@@ -72,99 +72,86 @@ const Data = () => {
 
   return (
     <>
-    <div className="bg-[#529bcf] h-24 w-screen flex flex-row">
+    <div className="bg-[#529bcf] h-24 w-screen flex flex-col">
         <div className=" mt-10 text-4xl text-center pl-9 font-medium">New Job Detail</div>
-        <div className="flex flex-col mt-96 text-center justify-center outline-0">
-         <label className="text-l text-[blue] mt-96">Company Name</label>
-          <input
-            type="text"
-            placeholder="Company Name"
-            value={companyname}
-            className=" p-3 h-14  border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
-            onChange={(e)=>{setcompanyname(e.target.value)}}
-          />
-         <label className="text-l pt-1 text-[blue]">Experience</label>
-          <input
-            type="text"
-            placeholder="Experience*"
-            value={experience}
-            onChange={(e)=>{setexperience(e.target.value)}}
-            className=" p-3 mt-2  h-14  border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
-          />
-        <label className="text-l pt-1 text-[blue]">About Us</label>
+        </div>
+        <div className="grid grid-cols-1 m-10 gap-4 sm:grid-cols-2">
+        <input
+          type="text"
+          placeholder="Company Name"
+          value={companyname}
+          onChange={(e) => setcompanyname(e.target.value)}
+          className="p-3 border border-gray-300 rounded-lg"
+        />
+        <input
+          type="text"
+          placeholder="Experience"
+          value={experience}
+          onChange={(e) => setexperience(e.target.value)}
+          className="p-3 border border-gray-300 rounded-lg"
+        />
+         
           <input
             type="text"
             placeholder="About*"
             value={about}
             onChange={(e)=>{setabout(e.target.value)}}
-            className=" p-3 mt-2   h-14  border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
+            className=" p-3  border-2 border-gray-300 rounded-lg"
           />
-        <label className="text-l pt-1 text-[blue]">Package</label>
-          <input
+                   <input
             type="text"
             placeholder="Package"
             value={package1}
             onChange={(e)=>{setpackage(e.target.value)}}
-
-            className=" p-3 mt-2  h-14 border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
+            className=" p-3 border border-gray-300 rounded-lg"
           />
-           <label className="text-l pt-1 text-[blue]">Qualification</label>
+        
           <input
             type="text"
             placeholder="Qualification"
             value={qualification}
             onChange={(e)=>{setqualification(e.target.value)}}
-
-            className=" p-3 mt-2  h-14 border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
+            className=" p-3 border border-gray-300 rounded-lg"
           />
           
-           <label className="text-l pt-1 text-[blue]">Location</label>
+            
           <input
             type="text"
             value={location}
             placeholder="location"
             onChange={(e)=>{setlocation(e.target.value)}}
-            className=" p-3  h-14 border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
+            className=" p-3 border border-gray-300 rounded-lg"
           />
-           <label className="text-l pt-1 text-[blue]">Apply Link</label>
+      
           <input
             type="text"
             value={link}
             placeholder="link"
             onChange={(e)=>{setlink(e.target.value)}}
-            className=" p-3   h-14 border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
+            className=" p-3 border border-gray-300 rounded-lg"
           />
-           <label className="text-l pt-1 text-[blue]">Image Link</label>
+       
           <input
             type="text"
             value={imagelink}
             placeholder="Image link"
             onChange={(e)=>{setimagelink(e.target.value)}}
-            className=" p-3   h-14 border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
+            className=" p-3 border border-gray-300 rounded-lg"
           />
-           <label className="text-l pt-1 text-[blue]">Job Overview</label>
+           
           <input
             type="text"
             value={joboverview}
             placeholder="Job Overview"
             onChange={(e)=>{setjoboverview(e.target.value)}}
-            className=" p-3   h-14 border-2 border-[gray] rounded-lg"
-            style={{ width: "800px" }}
+            className=" p-3 border border-gray-300 rounded-lg"
           />
-          <div className="text-auto text-center">
-            <button className="h-14 mt-6 mb-10 w-40 bg-[green] rounded-2xl  font-semibold text-white" onClick={onSubmit }> 
-              Save in Database
-            </button>
-          </div>
-        </div>
+          <button
+          className="py-3 bg-green-500 text-white rounded-lg font-semibold"
+          onClick={onSubmit}
+        >
+          Save in Database
+        </button>
         </div>
 
         {

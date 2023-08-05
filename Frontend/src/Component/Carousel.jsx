@@ -1,8 +1,11 @@
-import React from "react";
-import image1 from "../Image/ilya-pavlov-OqtafYT5kTw-unsplash.jpg";
-import image2 from "../Image/christin-hume-mfB1B1s4sMc-unsplash.jpg";
-import image3 from "../Image/domenico-loia-hGV2TfOh0ns-unsplash.jpg";
+import React,{useState} from "react";
+import image1 from "../assests/1.jpg";
+import image2 from "../assests/2.jpg";
+import image3 from "../assests/3.jpg";
+import ListIcon from '@mui/icons-material/List';
+import Navbar from "./Sidebar";
 const Carousel = () => {
+  const [show,setShow]=useState(false);
   return (
     <>
       <div
@@ -11,6 +14,7 @@ const Carousel = () => {
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
+        <ListIcon onClick={()=>{setShow(!show)}}/>
           <li
             data-target="#carouselExampleIndicators"
             data-slide-to="0"
@@ -72,6 +76,9 @@ const Carousel = () => {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      {
+        show && <Navbar/>
+      }
     </>
   );
 };

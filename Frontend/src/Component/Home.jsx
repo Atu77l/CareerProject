@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "./Sidebar";
 import Carousel from "./Carousel";
 import About from './About'
 import Chatbox from "./JobDetail";
@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <div>
       <div className="grid grid-cols-4">
-        <div className="grid grid-cols-1 bg-[#ece8e2]">
+        <div className="hidden bg-[#ece8e2] sm:grid sm:grid-cols-1">
           <Navbar />
         </div>
-        <div className="flex flex-col col-span-3">
+        <div className="grid grid-cols-1 col-span-4 sm:col-span-3">
           <Carousel />
           <About />
           <Chatbox />

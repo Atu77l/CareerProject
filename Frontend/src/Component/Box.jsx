@@ -71,8 +71,8 @@ const Box = () => {
         handle && <Message/>
       }
       </div>
-      <div className="">
-        <div className=" absolute right-0 bottom-5  bg-blue-800 rounded-full p-3  w-14 mr-10 " onClick={()=>{sethandle(!handle)}}><MessageIcon sx={{ color: "white" }}/></div>
+      <div className="cursor-pointer">
+        <div className=" absolute right-0 bottom-5 cursor-pointer bg-blue-800 rounded-full p-3  w-14 mr-10 " onClick={()=>{sethandle(!handle)}}><MessageIcon sx={{ color: "white" }}/></div>
         </div>
     </>
   );

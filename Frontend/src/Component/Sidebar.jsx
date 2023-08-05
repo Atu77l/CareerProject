@@ -4,11 +4,11 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import image from "../Image/Teal Modern Company Logo.png";
 import { Link } from "react-router-dom";
-const Navbar = () => {
+const Sidebar = () => {
   return (
     <>
-      <div className="">
-        <div className="bg-[#ECE8E2] text-center fixed left-24">
+      <div className="bg-white shadow-xl">
+        <div className="bg-white text-center fixed left-24">
           <div className="flex text-center justify-center">
             <img src={image} alt="" className="h-40 rounded-full" />
           </div>
@@ -44,4 +44,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Sidebar;

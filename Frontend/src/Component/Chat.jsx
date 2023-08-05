@@ -10,9 +10,6 @@ const Message = (props) => {
   
   const onSubmit=()=>{
     const data={"name":name,"email":email,"message":message}
-    console.log(data)
-
-
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
@@ -20,10 +17,7 @@ const Message = (props) => {
         headers: {  'Content-Type': 'application/json'  },
         data : data
         };
-
-      
         axios.request(config)
-
         .then((response) => {
         console.log(JSON.stringify(response.data));
         setname("")
@@ -38,10 +32,10 @@ const Message = (props) => {
   return (
     <>
     
-        <div className="h-96 w-80 shadow-lg bg-slate-300 rounded-lg m-10 ">
+        <div className="relative h-96 w-80 shadow-lg bg-slate-300 rounded-lg m-10 ">
           <div className="p-3 bg-blue-400 rounded-t-lg  mb-3 grid grid-cols-2">
-            <img src={image} alt="" className="h-14 rounded-lg " />
-           <div className=" rounded-full h-10 w-10 ml-24]   "><CloseIcon sx={{color:"white",fontSize:"40px"}}onClick={()=>{props.func(false)}}/></div> 
+            <img src={image} alt="" className="h-14 rounded-full " />
+           <div className=" rounded-full cursor-pointer bg-white h-14 w-14 text-center justify-center ml-24"><CloseIcon sx={{color:"blue",fontSize:"50px"}}onClick={()=>{props.func(false)}}/></div> 
           </div>
 
           <div className="flex flex-col ml-10 mr-10  ">

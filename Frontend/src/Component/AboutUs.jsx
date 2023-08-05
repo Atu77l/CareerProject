@@ -7,23 +7,23 @@ import {Link} from "react-router-dom"
 const AboutUs = () => {
   return (
     <>
-
-
-      <div className="bg-[#7eaad5]  h-24 w-screen flex flex-row text-white">
-        <img src={image5} alt="" className="rounded-3xl mt-2 ml-20 mb-2" />
-        <Link to='/'>  <div
-          className="mt-9 text-2xl  font-medium hover:underline"
-          style={{ marginLeft: "800px" }}
+      <div className="bg-[#7eaad5]  h-24 flex flex-row text-white">
+        <img src={image5} alt="logo" className="rounded-full mt-2 mb-2 ml-10"/>
+        <div className="grid grid-cols-3 ml-2">
+        <Link to='/'>  
+        <div
+          className="mt-9 text-2xl font-medium hover:underline"
         >
           Home
         </div></Link>
 
-         <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
-          About Us{" "}
+         <div className="mt-9 text-2xl font-medium hover:underline">
+          About
         </div>
-        <Link to='/contact'>   <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
+        <Link to='/contact'>   <div className="mt-9 text-2xl font-medium hover:underline">
           Contact
         </div></Link> 
+        </div>
       </div>
       <div className="ml-10 mt-10 font-semibold text-4xl font-serif">
         ABOUT US

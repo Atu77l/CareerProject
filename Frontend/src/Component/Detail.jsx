@@ -1,11 +1,10 @@
 import React,{useState,useEffect} from "react";
-import image5 from "./../Image/Teal Modern Company Logo.png";
-import Image from "../Image/download.png";
 import { Link,useParams} from "react-router-dom";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 const Detail = () => {
   const [jobdetail,setjobdetail]=useState({})
@@ -40,27 +39,7 @@ const Detail = () => {
   
   return (
     <>
-      <div className="bg-[#7eaad5] h-24 w-screen flex flex-row text-white">
-        <img src={image5} alt="" className="rounded-3xl mt-2 ml-20 mb-2" />
-        <Link to="/">
-          <div
-            className="mt-9 text-2xl  font-medium hover:underline"
-            style={{ marginLeft: "800px" }}
-          >
-            Home
-          </div>
-        </Link>
-
-        <Link to="/about">
-          <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
-            About Us
-          </div>
-        </Link>
-        <Link to="/contact">
-          <div className="mt-9 text-2xl pl-10 font-medium ">Contact</div>
-        </Link>
-      </div>
-
+     <Navbar/>
       <div className="">
         <div className="flex flex-row w-4/6">
           <img src={jobdetail.imagelink} alt="" className="h-32 w-32  m-14 " />

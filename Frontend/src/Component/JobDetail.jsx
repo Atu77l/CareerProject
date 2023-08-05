@@ -50,9 +50,9 @@ const Box = () => {
         console.log("item",item)
         const path=`/detail/${item._id}`
         return (
-          <div className="mr-5 rounded-lg shadow mt-5 ml-5 flex flex-row">
+          <div className="mr-5 rounded-lg shadow mt-5 ml-5 grid grid-cols-1 sm:grid-cols-3">
               <img src={item.imagelink} alt="company logo" className="h-24 w-24 m-5 rounded-lg" />
-            <div className="flex flex-col pl-10">
+            <div className="flex flex-col pl-10 sm:col-span-2">
               <div className="pt-1 text-3xl font-medium">
                 {item.companyname}
               </div>
@@ -65,16 +65,16 @@ const Box = () => {
                 </span>
               </Link>
             }
-              <div className="flex flex-row mb-2">
+              <div className="grid grid-cols-1 mb-2 sm:grid-cols-2">
                 <div className="pt-1 font-normal text-xl">
                   Experience Required:
-                  <span className="text-blue-600 text-l pl-5">
+                  <span className="text-blue-600 text-l">
                     {item.experience}
                   </span>
                 </div>
-                <div className="pt-1 font-normal text-xl ml-4">
+                <div className="pt-1 font-normal text-xl">
                   Package:
-                  <span className="text-blue-600 text-l pl-5">
+                  <span className="text-blue-600 text-l">
                     {item.package}
                   </span>
                 </div>
