@@ -8,6 +8,7 @@ import './App.css'
 import Detail from './Component/Detail'
 import Resume from './Component/Resume'
 import ResumePdf from '../src/Component/ResumePdfFormat'
+import Design from './Component/Design'
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
         <Route path='/detail/:id' exact element={<Detail/>}/>
         <Route path='/resume_result' exact element={<ResumePdf func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='/resume' exact element={<Resume func={setresumedata} resumedata={resumedata}/>}/>
+        <Route path='/design' exact element={<Design/>}/>
         </Routes>
   </Router>
     </>

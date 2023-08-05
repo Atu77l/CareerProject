@@ -16,9 +16,19 @@ const Navbar = () => {
                 <Link to='/about'> <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
                     About
                 </div></Link>
-                <div className="mt-9 text-2xl pl-10 font-medium ">
+                <Link to='/contact'><div className="mt-9 text-2xl pl-10 font-medium ">
                     Contact
+                </div></Link>
+                <Link to='/design'>
+                <div className="mt-9 text-2xl pl-10 font-medium ">
+                    Design
                 </div>
+                </Link>
+                <Link to='/resume'>
+                <div className="mt-9 text-2xl pl-10 font-medium ">
+                    Resume
+                </div>
+                </Link>
             </div>
         </div>
     )

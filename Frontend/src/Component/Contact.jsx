@@ -5,6 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import image5 from "../Image/Teal Modern Company Logo.png";
 import {Link} from 'react-router-dom'
 import axios from "axios";
+import Navbar from "./Navbar";
 
 const Contact = () => {
   const [name,setname]=useState("")
@@ -41,26 +42,10 @@ const Contact = () => {
   }
   return (
     <>
-      <div className="bg-[#7eaad5] h-24  flex flex-row text-white">
-        <img src={image5} alt="" className="rounded-3xl mt-2 ml-20 mb-2" />
-     <Link to='/'>   
-     <div
-          className="mt-9 ml-20 text-2xl  font-medium hover:underline"        >
-          Home
-        </div></Link>
-
-       <Link to='/about'> <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
-          About
-        </div></Link>
-        <div className="mt-9 text-2xl pl-10 font-medium ">
-          Contact
-        </div>
-      </div>
-      <div className="h-screen">
-        <div className="font-semibold shadow text-3xl text-center mt-8">
-          Contact Us
-        </div>
-        <hr className="ml-10 mr-10 mt-2 font-bold" />
+    <div className="h-screen">
+    <Navbar/>
+      <div>
+        <hr className="ml-10 mr-10 mt-10 font-bold" />
         <hr className="ml-10 mr-10 mt-1 font-bold" />
 
         <div className="grid grid-cols-1 gap-4 mt-2 m-10 outline-0 sm:grid-cols-2">
@@ -104,7 +89,7 @@ const Contact = () => {
           </div>
           </div>
         </div>
-
+        </div>
         <div className="bg-[#7eaad5] w-screen h-40">
           <div className="text-center pt-10">
             <LinkedInIcon sx={{ color: "white" }} />
@@ -115,6 +100,7 @@ const Contact = () => {
             Copyright © 2022 Fast Careers - All Rights Reserved.
           </div>
         </div>
+       
     </>
   );
 };
