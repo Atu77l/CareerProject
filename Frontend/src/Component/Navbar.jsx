@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div>
+        
             <div className="bg-[#7eaad5] h-24  flex flex-row text-white">
-                <img src={image5} alt="" className="rounded-3xl mt-2 ml-20 mb-2" />
+                <img src={image5} alt="" className="rounded-3xl mt-2 lg:ml-28 sm:ml-5 mb-2" />
                 <Link to='/'>
                     <div
-                        className="mt-9 ml-20 text-2xl  font-medium hover:underline"        >
+                        className="mt-9 lg:ml-20 sm:ml-2 text-2xl  font-medium hover:underline"        >
                         Home
                     </div></Link>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
                 </div>
                 </Link>
             </div>
-        </div>
+      
     )
 }
 

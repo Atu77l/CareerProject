@@ -44,47 +44,49 @@ const Contact = () => {
     <>
     <div className="h-screen">
     <Navbar/>
-      <div>
+      <div className="">
         <hr className="ml-10 mr-10 mt-10 font-bold" />
         <hr className="ml-10 mr-10 mt-1 font-bold" />
-
-        <div className="grid grid-cols-1 gap-4 mt-2 m-10 outline-0 sm:grid-cols-2">
+<div className="flex text-center justify-center ">
+        <div className=" grid grid-cols-1 mt-8 m-10 outline-0  ">
           <input
             type="text"
             placeholder="Name*"
             value={name}
             onChange={(e)=>{setname(e.target.value)}}
-            className=" p-4 h-10   border-2 border-[gray] rounded-xl"
+            className=" p-4 h-10   border-2 border-[gray] rounded-md w-96"
           />
           <input
             type="text"
             placeholder="Email*"
             value={email}
             onChange={(e)=>{setemail(e.target.value)}}
-            className=" p-4 h-10  border-2 border-[gray] rounded-xl"
+            className=" p-4 h-10 mt-3 border-2 border-[gray] rounded-md w-96"
           />
           <input
             type="text"
             placeholder="Phone No*"
             value={phone}
             onChange={(e)=>{setphone(e.target.value)}}
-            className=" p-4 mt-3   h-10  border-2 border-[gray] rounded-xl"
+            className=" p-4 mt-3   h-10  border-2 border-[gray] rounded-md w-96"
           />
           <input
             type="text"
             placeholder="Message"
             value={message}
             onChange={(e)=>{setmessage(e.target.value)}}
-            className=" p-4 mt-3  h-10 border-2 border-[gray] rounded-xl"
+            className=" p-4 mt-3  h-10 border-2 border-[gray] rounded-md w-96"
           />
+         
           <div className="grid grid-cols-1 mt-2">
-            <button className="h-10 mt-3  bg-[#287dd1] rounded-xl font-medium text-white" onClick={onSubmit}>
+            <button className="h-10 mt-3  bg-[#287dd1] rounded-xl font-medium text-white w-96" onClick={onSubmit}>
               Send Message
             </button>
-            <div className="text-sm mt-1 mb-5">
-              This site is protected by reCAPTCHA and the Google
+            <div className="text-sm mt-1 mb-5 ">
+              This site is protected by reCAPTCHA and the Google<br/>
               <span className="text-[green]">Privacy Policy</span> and{" "}
               <span className="text-[green]">Terms of Service</span> apply.
+            </div>
             </div>
           </div>
           </div>
