@@ -25,8 +25,8 @@ const App = () => {
     "experience":[{"title":"Software Developer","company":"Damyant Software Private Limited","startDate":"20/01/2020","endDate":"12/02/2020","description":"Good Working conditions"},{"title":"Software Developer","company":"Damyant Software Private Limited","startDate":"20/01/2020","endDate":"12/02/2020","description":"Good Working conditions"},{"title":"Software Developer","company":"Damyant Software Private Limited","startDate":"20/01/2020","endDate":"12/02/2020","description":"Good Working conditions"}],
     "skills":["C++","JavaScript","Node Js","MongoDB","Data Structure and Algorithm"],
     "certifications":[{"title":"NPTEL","description":"this is related to complete the course in IOT"}],
-    "hobbies":["Playing Chess","Read and Write"]
-  
+    "hobbies":["Playing Chess","Read and Write"],
+    "project":[{"title":"online shopping","tech":"html,css,javascript","description":"App is responsive and where we can create anything"},{"title":"online shopping","tech":"html,css,javascript","description":"App is responsive and where we can create anything"},{"title":"online shopping","tech":"html,css,javascript","description":"App is responsive and where we can create anything"}]
   }
   const [resumedata,setresumedata]=useState(data)
   useEffect(()=>{

@@ -58,6 +58,19 @@ const styles = StyleSheet.create({
   hobbies:{
     flexDirection:"row",
     marginLeft:5
+  },
+  skill:{
+    // display: "grid",
+    // gridTemplateColumns: "3fr 3fr 3fr 3fr 3fr",
+    // gridGap: 20,
+    flexDirection:"row",
+    marginLeft:5
+  },
+  skillItem:{
+    textAlign:"center",
+    margin:5,
+    padding:5,
+    backgroundColor:"lightblue",
   }
 
 });
@@ -65,17 +78,23 @@ const styles = StyleSheet.create({
 const MyDocument = ({ data }) => (
   <Document>
     <Page size="A4" style={styles.page}>
+    <View style={styles.section}>
+      <View style={styles.skill}>
       <View style={styles.section}>
        <Text style={styles.name}>{data.name}</Text>
         <Text style={styles.title}>{data.title}</Text>
+      </View>
+      <View>
        <Text style={styles.text}>Email: {data.email}</Text>
        <Text style={styles.text}>Phone: {data.phone}</Text>
        <Text style={styles.linkedIn}>LinkedIn:{data.linkedIn}</Text>
        <Text style={styles.github}>Github:{data.github}</Text>
+       </View>
+       </View>
         <Text style={styles.horizontal}></Text>
         <Text style={styles.subtitle}>Education</Text>
         {
-          data.education.length > 0 ? data.education.map((item, id) => {
+           data.education.map((item, id) => {
           return (
 
             <View key={item.id} style={styles.experience}>
@@ -86,11 +105,11 @@ const MyDocument = ({ data }) => (
 
             </View>
           )
-        }) : ""}
+        })}
         <Text style={styles.horizontal}></Text>
 
         <Text style={styles.subtitle}>Experience</Text>
-        {data.experience.length > 0 ? data.experience.map((exp, id) => {
+        {data.experience.map((exp, id) => {
           return (
             <View key={exp.id} style={styles.experience}>
               <Text styles={styles.box1}>
@@ -103,12 +122,12 @@ const MyDocument = ({ data }) => (
               <Text style={styles.text}>Description: {exp.description}</Text>
             </View>
           )
-        }) : ""}
+        })}
 
         <Text style={styles.horizontal}></Text>
 
         <Text style={styles.subtitle}>Project</Text>
-        {data.project.length > 0 ? data.project.map((exp, id) => {
+        {data.project.map((exp, id) => {
           return (
             <View key={exp.id} style={styles.experience}>
               <Text styles={styles.box1}>
@@ -118,40 +137,42 @@ const MyDocument = ({ data }) => (
               <Text style={styles.text}>Description: {exp.description}</Text>
             </View>
           )
-        }) : ""}
+        }) }
         <Text style={styles.horizontal}></Text>
 
         <Text style={styles.subtitle}>Skills</Text>
-        {data.skills.length > 0 ? data.skills.map((skill, id) => {
+        <div style={styles.skill}>
+        { data.skills.map((skill, id) => {
           return (
-            <View key={id} style={styles.hobbies}>
+            <View key={id} style={styles.skillItem}>
               <Text style={styles.text}>{skill}</Text>
             </View>
           )
-        }) : ""}
+        }) }
+        </div>
         <Text style={styles.horizontal}></Text>
 
         <Text style={styles.subtitle}>Certifications</Text>
-        {data.certifications.length > 0 ? data.certifications.map((cert, id) => {
+        { data.certifications.map((cert, id) => {
           return (
             <View key={cert.id} style={styles.experience}>
               <Text style={styles.heading}>{cert.title}</Text>
               <Text style={styles.text}>{cert.description}</Text>
             </View>
           )
-        }) : ""}
+        })}
         <Text style={styles.horizontal}></Text>
 
         <Text style={styles.subtitle}>Hobbies and Interest</Text>
-        {data.hobbies.length > 0 ? data.hobbies.map((exp, id) => {
+        {data.hobbies.map((exp, id) => {
           return (
             <View key={exp.id} style={styles.hobbies}>
               <Text style={styles.text}>{exp}</Text>
             </View>
           )
-        }) : ""}
+        })}
 
-      </View>
+     </View>
     </Page>
   </Document>
 );
