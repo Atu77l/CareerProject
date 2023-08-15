@@ -9,7 +9,8 @@ import Detail from './Component/Detail'
 import Resume from './Component/Resume'
 import ResumePdf from '../src/Component/ResumePdfFormat'
 import Design from './Component/Design'
-
+import Page_404 from './Component/Page_404'
+import Dashboard from './Component/Dashboard/Dashboard'
 
 const App = () => {
   let data={
@@ -36,6 +37,7 @@ const App = () => {
     <>
   <Router>
         <Routes>
+        <Route path='/dashboard' exact element={<Dashboard/>}/>
         <Route path='/' exact element={<Home/>}/>
         <Route path='/about' exact element={<Aboutus/>}/>
         <Route path='/contact' exact element={<Contact/>}/>
@@ -44,6 +46,7 @@ const App = () => {
         <Route path='/resume_result' exact element={<ResumePdf func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='/resume' exact element={<Resume func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='/design' exact element={<Design/>}/>
+        <Route path='*' element={<Page_404/>}/>
         </Routes>
   </Router>
     </>
