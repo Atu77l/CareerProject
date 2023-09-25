@@ -2,7 +2,7 @@ import React from "react";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import image from "../Image/Teal Modern Company Logo.png";
+import image from "../assests/FirstStephub.png";
 import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
@@ -20,11 +20,11 @@ const Sidebar = () => {
             <Link to="/resume">
               <div className="mt-4 hover:underline">Resume</div>
             </Link>
-            <Link to="/Contact">
-              <div className="mt-4 hover:underline">Contact</div>
-            </Link>
             <Link to="/design">
               <div className="mt-4 hover:underline">Design</div>
+            </Link>
+            <Link to="/Contact">
+              <div className="mt-4 hover:underline">Contact</div>
             </Link>
           </div>
         </div>
@@ -38,7 +38,7 @@ const Sidebar = () => {
             <InstagramIcon sx={{ color: "white" }} className="ml-3" />
           </div>
           <div className="text-center text-white pt-8">
-            Copyright © 2022 Fast Careers - All Rights Reserved.
+            Copyright © 2022 FastStepHub - All Rights Reserved.
           </div>
         </div>
        </div>

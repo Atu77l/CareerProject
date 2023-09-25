@@ -1,5 +1,5 @@
 import React from 'react'
-import image5 from "../Image/Teal Modern Company Logo.png";
+import image5 from "../assests/FirstStephub.png";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -16,14 +16,12 @@ const Navbar = () => {
                 <Link to='/about'> <div className="mt-9 text-2xl pl-10 font-medium hover:underline">
                     About
                 </div></Link>
+                <Link to='/design'><div className="mt-9 text-2xl pl-10 font-medium ">
+                    Design
+                </div></Link>
                 <Link to='/contact'><div className="mt-9 text-2xl pl-10 font-medium ">
                     Contact
                 </div></Link>
-                <Link to='/design'>
-                <div className="mt-9 text-2xl pl-10 font-medium ">
-                    Design
-                </div>
-                </Link>
                 <Link to='/resume'>
                 <div className="mt-9 text-2xl pl-10 font-medium ">
                     Resume
