@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import image from "../Image/Teal Modern Company Logo.png";
+import image from "../../Image/Teal Modern Company Logo.png";
 import axios from "axios";
 import CloseIcon from '@mui/icons-material/Close';
 

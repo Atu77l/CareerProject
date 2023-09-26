@@ -1,16 +1,15 @@
 import React,{useEffect,useState} from 'react'
-import Contact from './Component/Contact'
-import  Aboutus from './Component/AboutUs'
-import Home from './Component/Home'
-import Data from './Component/Data'
+import Contact from './Component/Layout/Contact'
+import  Aboutus from './Component/About/AboutUs'
+import Home from './Component/Dashboard/Home'
+import Data from './Component/Admin/Data'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import './App.css'
-import Detail from './Component/Detail'
-import Resume from './Component/Resume'
-import ResumePdf from '../src/Component/ResumePdfFormat'
-import Design from './Component/Design'
-import Page_404 from './Component/Page_404'
-import Dashboard from './Component/Dashboard/Dashboard'
+import Detail from './Component/JobDetail/Detail'
+import Resume from './Component/Resume/Resume'
+import ResumePdf from '../src/Component/Resume/ResumePdfFormat'
+import Design from './Component/Design/Design'
+import Page_404 from './Component/Layout/Page_404'
 
 const App = () => {
   let data={
@@ -37,7 +36,6 @@ const App = () => {
     <>
   <Router>
         <Routes>
-        <Route path='/dashboard' exact element={<Dashboard/>}/>
         <Route path='/' exact element={<Home/>}/>
         <Route path='/about' exact element={<Aboutus/>}/>
         <Route path='/contact' exact element={<Contact/>}/>

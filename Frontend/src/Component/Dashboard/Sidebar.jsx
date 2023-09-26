@@ -2,7 +2,7 @@ import React from "react";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import image from "../assests/FirstStephub.png";
+import image from "../../assests/FirstStephub.png";
 import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (

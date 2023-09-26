@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from "react";
-import image4 from "../Image/download.png";
+import image4 from "../../Image/download.png";
 import AddIcon from "@mui/icons-material/Add";
 import MessageIcon from "@mui/icons-material/Message";
-import Message from "./Message";
+import Message from "../Dashboard/Message";
 import axios from "axios";
 
 const Box = () => {

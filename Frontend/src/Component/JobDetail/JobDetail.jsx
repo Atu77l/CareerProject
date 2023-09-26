@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import image4 from "../Image/download.png";
-import AddIcon from "@mui/icons-material/Add";
 import MessageIcon from "@mui/icons-material/Message";
-import Message from "./Chat";
+import Message from "../Dashboard/Chat";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AddIcon from '@mui/icons-material/AcUnit';
 
 const Box = () => {
   const [handle, sethandle] = useState(false);

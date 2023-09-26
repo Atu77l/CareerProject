@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from './Navbar'
+import Navbar from '../Layout/Navbar'
 import axios from 'axios'
 import { Controlled as CodeMirror } from 'react-codemirror2';
 
@@ -50,7 +50,8 @@ const Design = () => {
           designDetail.map((item, key) => {
             return (
               <div className="flex flex-col m-10">
-                <h1 className="text-2xl font-medium m-2">##{item.title}</h1>
+                <h1 className="text-2xl font-medium">Topic::-{item.topic}</h1>
+                <h1 className="text-2xl font-medium">Title::-{item.title}</h1>
                 <CodeMirror
                   value={item.code}
                   options={{

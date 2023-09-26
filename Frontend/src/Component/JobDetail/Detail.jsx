@@ -4,7 +4,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import axios from "axios";
-import Navbar from "./Navbar";
+import Navbar from "../Layout/Navbar";
 
 const Detail = () => {
   const [jobdetail,setjobdetail]=useState({})

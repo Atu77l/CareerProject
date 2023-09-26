@@ -1,5 +1,5 @@
 import React from 'react'
-import image5 from "../assests/FirstStephub.png";
+import image5 from "../../assests/FirstStephub.png";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {

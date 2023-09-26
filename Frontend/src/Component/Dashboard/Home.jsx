@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "./Sidebar";
 import Carousel from "./Carousel";
-import About from './About'
-import Chatbox from "./JobDetail";
+import About from '../About/About'
+import Chatbox from "../JobDetail/JobDetail";
 
 const Home = () => {
   return (

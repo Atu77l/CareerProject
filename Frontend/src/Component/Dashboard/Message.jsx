@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../Image/Teal Modern Company Logo.png";
+import image from "../../Image/Teal Modern Company Logo.png";
 const Message = () => {
   return (
     <>

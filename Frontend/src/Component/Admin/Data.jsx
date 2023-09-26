@@ -1,11 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
-import { Folder } from '@mui/icons-material'
 import { Controlled as CodeMirror } from 'react-codemirror2';
 
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/material.css';
-import 'codemirror/mode/javascript/javascript';
+// import 'codemirror/lib/codemirror.css';
+// import 'codemirror/theme/material.css';
+// import 'codemirror/mode/javascript/javascript';
 
 const Data = () => {
   const [companyname,setcompanyname]=useState("")
