@@ -41,6 +41,7 @@ const Contact = () => {
   }
   return (
     <>
+<<<<<<< HEAD
       <div className="h-screen">
         <Navbar />
         <div className="">
@@ -49,6 +50,15 @@ const Contact = () => {
           <div className="text-center justify-center text-4xl mt-2 font-serif">Contact Us</div>
           <div className="flex text-center justify-center ">
             <div className=" grid grid-cols-1 mt-8 m-10 outline-0  ">
+=======
+      <div className="">
+        <Navbar />
+        <div className="mt-5">
+        
+          <div className=" flex text-center justify-center text-4xl mt-32 font-serif">Contact Us</div>
+          <div className="flex text-center justify-center ">
+            <div className=" grid grid-cols-1 mt-8 m-10 outline-0  outline-none  ">
+>>>>>>> akki
               <input
                 type="text"
                 placeholder="Name*"
@@ -77,13 +87,21 @@ const Contact = () => {
                 onChange={(e) => { setmessage(e.target.value) }}
                 className=" p-4 mt-3  h-10 border-2 border-[gray] rounded-md w-96"
               />
+<<<<<<< HEAD
               <textarea value={description} className="h-36 mt-3 border-2 border-[gray] p-4 rounded-md" placeholder="Description*" onChange={(e) => { setDescription(e.target.value) }} />
+=======
+              <textarea value={description} className="h-36 mt-3 border-2 border-[gray] p-2 pl-4 rounded-md" placeholder="Description*" onChange={(e) => { setDescription(e.target.value) }} />
+>>>>>>> akki
 
               <div className="grid grid-cols-1 mt-2">
                 <button className="h-10 mt-3  bg-[#287dd1] rounded-xl font-medium text-white w-96" onClick={onSubmit}>
                   Send Message
                 </button>
+<<<<<<< HEAD
                 <div className="text-sm mt-1 mb-5 ">
+=======
+                <div className="text-sm mt-1  ">
+>>>>>>> akki
                   This site is protected by reCAPTCHA and the Google<br />
                   <span className="text-[green]">Privacy Policy</span> and{" "}
                   <span className="text-[green]">Terms of Service</span> apply.
@@ -93,7 +111,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <div className="bg-[#7eaad5] w-screen h-40">
+=======
+      <div className="bg-blue-500  h-40 ">
+>>>>>>> akki
         <div className="text-center pt-10">
           <LinkedInIcon sx={{ color: "white" }} />
           <TelegramIcon sx={{ color: "white" }} className="ml-3" />

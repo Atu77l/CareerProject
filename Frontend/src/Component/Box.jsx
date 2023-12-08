@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from "react";
-import image4 from "../../Image/download.png";
+import image4 from "../Image/download.png";
 import AddIcon from "@mui/icons-material/Add";
 import MessageIcon from "@mui/icons-material/Message";
-import Message from "../Dashboard/Message";
+import Message from "./Message";
 import axios from "axios";
 
 const Box = () => {
@@ -35,11 +35,7 @@ const Box = () => {
     {
       jobDetail.map((item,key)=>{
         return(
-<<<<<<< HEAD
           <div className="h-48 mr-5 rounded-lg shadow-lg mt-10 ml-5 flex flex-row">
-=======
-          <div className="h-48 mx-8 rounded-lg shadow-2xl mt-10  flex flex-row">
->>>>>>> akki
         <div>
           <img src={image4} alt="" className="h-28 w-28 m-5 rounded-lg" />
         </div>

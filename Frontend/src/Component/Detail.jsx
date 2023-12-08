@@ -4,7 +4,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import axios from "axios";
-import Navbar from "../Layout/Navbar";
+import Navbar from "./Navbar";
 
 const Detail = () => {
   const [jobdetail,setjobdetail]=useState({})
@@ -86,11 +86,7 @@ const Detail = () => {
           <TelegramIcon sx={{ color: "white" }} className="ml-3" />
           <InstagramIcon sx={{ color: "white" }} className="ml-3" />
         </div>
-<<<<<<< HEAD
         <div className="text-center text-white pt-8 font-bold text-xl">
-=======
-        <div className="text-center text-white pt-6 font-bold text-xl">
->>>>>>> akki
           Copyright © 2022 Fast Careers - All Rights Reserved.
         </div>
       </div>

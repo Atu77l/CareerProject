@@ -1,7 +1,7 @@
 import React,{useState} from "react";
-import image1 from "../../assests/1.jpg";
-import image2 from "../../assests/2.jpg";
-import image3 from "../../assests/3.jpg";
+import image1 from "../assests/1.jpg";
+import image2 from "../assests/2.jpg";
+import image3 from "../assests/3.jpg";
 import ListIcon from '@mui/icons-material/List';
 import Navbar from "./Sidebar";
 const Carousel = () => {
@@ -76,12 +76,11 @@ const Carousel = () => {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      {
+        show && <Navbar/>
+      }
     </>
   );
 };
 
-<<<<<<< HEAD
 export default Carousel;
-=======
-export default Carousel;
->>>>>>> akki

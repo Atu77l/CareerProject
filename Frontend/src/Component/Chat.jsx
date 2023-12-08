@@ -1,9 +1,5 @@
 import React,{useState} from "react";
-<<<<<<< HEAD
-import image from "../../Image/Teal Modern Company Logo.png";
-=======
-import image from "../../assests/FirstStephub.png";
->>>>>>> akki
+import image from "../Image/Teal Modern Company Logo.png";
 import axios from "axios";
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -36,17 +32,10 @@ const Message = (props) => {
   return (
     <>
     
-<<<<<<< HEAD
         <div className="relative h-96 w-80 shadow-lg bg-slate-300 rounded-lg m-10 ">
           <div className="p-3 bg-blue-400 rounded-t-lg  mb-3 grid grid-cols-2">
             <img src={image} alt="" className="h-14 rounded-full " />
            <div className=" rounded-full cursor-pointer bg-white h-14 w-14 text-center justify-center ml-24"><CloseIcon sx={{color:"blue",fontSize:"50px"}}onClick={()=>{props.func(false)}}/></div> 
-=======
-        <div className="relative h-96 w-80 shadow-lg bg-slate-200 rounded-lg m-10 ">
-          <div className="p-3  bg-blue-400 rounded-t-lg  mb-3 grid grid-cols-2">
-            <img src={image} alt="" className="h-14 rounded-full " />
-           <div className=" rounded-full cursor-pointer bg-white h-7 w-7 text-center justify-center ml-28"><CloseIcon sx={{color:"red",fontSize:"28px"}} onClick={()=>{props.func(false)}}/></div> 
->>>>>>> akki
           </div>
 
           <div className="flex flex-col ml-10 mr-10  ">
@@ -55,17 +44,10 @@ const Message = (props) => {
               placeholder="Name"
               value={name}
               onChange={(e)=>{setname(e.target.value)}}
-<<<<<<< HEAD
               className=" outline-white  outline-0 pl-3 rounded-lg h-8"
             />
             <input
               type="ttext"
-=======
-              className=" outline-white  outline-0 pl-3 rounded-lg h-8 "
-            />
-            <input
-              type="text"
->>>>>>> akki
               placeholder="Email"
               value={email}
               onChange={(e)=>{setemail(e.target.value)}}
@@ -84,13 +66,8 @@ const Message = (props) => {
             <input type="checkbox" name="" id="" className="mr-2"/>
              Sign up to receive email updates, announcements, and more.
           </p>
-<<<<<<< HEAD
           <button className="h-10 w-40 bg-blue-400 rounded-lg ml-20 font-medium text-white" onClick={onSubmit}>
             Send
-=======
-          <button className="h-10 w-40 bg-blue-500 rounded-lg ml-20 font-medium text-white" onClick={onSubmit}>
-            Submit
->>>>>>> akki
           </button>
           <div className="text-xs mt-1 ml-4">
             This site is protected by reCAPTCHA and the Google{" "}
