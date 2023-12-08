@@ -1,10 +1,10 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import Carousel from "./Carousel";
+import Carousel from "./Carousel"
 import About from "../About/About";
 import JobDetail from "../JobDetail/JobDetail";
 import Footer from "../Layout/Footer"
-import Navbar from "../Layout/Navbar"
+// import Navbar from "../Layout/Navbar"
 const Home = () => {
   return (
     

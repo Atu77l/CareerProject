@@ -1,23 +1,83 @@
-import { Carousel } from "@material-tailwind/react";
- 
-export function CarouselDefault() {
+import React,{useState} from "react";
+import image1 from "../../assests/1.jpg";
+import image2 from "../../assests/2.jpg";
+import image3 from "../../assests/3.jpg";
+import ListIcon from '@mui/icons-material/List';
+import Navbar from "./Sidebar";
+const Carousel = () => {
+  const [show,setShow]=useState(false);
   return (
-    <Carousel className="rounded-xl w-full">
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
+    <>
+      <div
+        id="carouselExampleIndicators"
+        className="carousel slide"
+        data-ride="carousel"
+      >
+        <ol className="carousel-indicators">
+        <ListIcon onClick={()=>{setShow(!show)}}/>
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            className="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              className="d-block"
+              src={image1}
+              alt="First slide"
+              style={{ height: "400px", width: "1500px" }}
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block"
+              src={image2}
+              alt="Second slide"
+              style={{ height: "400px", width: "1500px" }}
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              className="d-block"
+              src={image3}
+              alt="Third slide"
+              style={{ height: "400px", width: "1500px" }}
+            />
+          </div>
+        </div>
+        <a
+          className="carousel-control-prev  "
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+          style={{ paddingBottom: "100px" }}
+        >
+          <span
+            className="carousel-control-prev-icon "
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only ">Previous</span>
+        </a>
+        <a
+          className="carousel-control-next "
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+          style={{ paddingBottom: "100px" }}
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
+    </>
   );
-}
+};
+
+export default Carousel;

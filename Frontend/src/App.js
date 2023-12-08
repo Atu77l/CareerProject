@@ -1,16 +1,16 @@
 import React,{useEffect,useState} from 'react'
-import Contact from './Component/Contact'
-import  Aboutus from './Component/AboutUs'
-import Home from './Component/Home'
-import Data from './Component/Data'
+import Contact from '../src/Component/Layout/Contact'
+import  Aboutus from '../src/Component/About/AboutUs'
+import Home from '../src/Component/Dashboard/Home'
+import Data from '../src/Component/Admin/Data'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import './App.css'
-import Detail from './Component/Detail'
-import Resume from './Component/Resume'
-import ResumePdf from '../src/Component/ResumePdfFormat'
-import Design from './Component/Design'
-import Page_404 from './Component/Page_404'
-import Dashboard from './Component/Dashboard/Dashboard'
+import Detail from '../src/Component/JobDetail/Detail'
+import Resume from '../src/Component/Resume/Resume'
+import ResumePdf from '../src/Component/Resume/ResumePdfFormat'
+import Design from '../src/Component/Design/Design'
+import Page_404 from '../src/Component/Layout/Page_404'
+import Dashboard from '../src/Component/Dashboard/Dashboard'
 
 const App = () => {
   let data={

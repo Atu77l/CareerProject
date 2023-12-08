@@ -45,7 +45,7 @@ const Contact = () => {
         <Navbar />
         <div className="mt-5">
         
-          <div className=" flex text-center justify-center text-4xl mt-28 font-serif">Contact Us</div>
+          <div className=" flex text-center justify-center text-4xl mt-32 font-serif">Contact Us</div>
           <div className="flex text-center justify-center ">
             <div className=" grid grid-cols-1 mt-8 m-10 outline-0  outline-none  ">
               <input

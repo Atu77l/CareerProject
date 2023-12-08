@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         
-            <div className= "  fixed top-0 right-0 left-0 bg-blue-400 h-24  flex flex-row text-white font-serif ">
+            <div className= "  fixed top-0 right-0 left-0 bg-blue-400 h-28  flex flex-row text-white font-serif ">
                 <img src={image5} alt="" className="rounded-full mt-2 lg:ml-28 sm:ml-5 mb-2 " />
                 <Link to='/'>
                     <div

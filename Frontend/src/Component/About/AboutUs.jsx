@@ -8,7 +8,7 @@ const AboutUs = () => {
   return (
     <>
      <Navbar/>
-      <div className="ml-10 mt-10 font-bold text-3xl font-sans">
+      <div className="ml-10 mt-36 font-bold text-3xl font-sans">
         ABOUT US
       </div>
       <hr className="m-3" />
@@ -25,7 +25,7 @@ Overall, Fast Career appears to have the potential to be a valuable resource for
           <br /><br/>
         </p>
 
-        <div className="bg-blue-500 w-screen h-32 ">
+        <div className="bg-blue-500  h-32  ">
           <div className="text-center pt-10">
             <LinkedInIcon sx={{ color: "white" }} />
             <TelegramIcon sx={{ color: "white" }} className="ml-3" />

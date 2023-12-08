@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Features from './Features'
-import Carousel from '../Carousel'
+import Carousel from './Carousel'
 import Product from './Product'
 import Content from './Content'
 
