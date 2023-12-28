@@ -1,22 +1,12 @@
 import React from "react";
-<<<<<<< HEAD
-import image from "../../Image/Teal Modern Company Logo.png";
-=======
 import image5 from "../../assests/FirstStephub.png";
->>>>>>> akki
 const Message = () => {
   return (
     <>
     
-<<<<<<< HEAD
-        <div className="h-96 w-80 shadow-lg bg-slate-300 rounded-lg m-10 ">
-          <div className="p-3 bg-blue-400 rounded-t-lg  mb-3">
-            <img src={image} alt="" className="h-14 rounded-lg " />
-=======
         <div className="lg:h-96 sm:20 lg:w-80 sm:20 shadow-lg bg-slate-300 rounded-lg m-10 ">
           <div className="p-3 bg-blue-500 rounded-t-lg  mb-3">
             <img src={image5} alt="" className="h-14 rounded-lg " />
->>>>>>> akki
           </div>
 
           <div className="flex flex-col ml-10 mr-10  ">

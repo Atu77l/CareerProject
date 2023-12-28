@@ -3,7 +3,7 @@ const mongoose=require('mongoose');
 const connectDB=async ()=>{
     try{
         
-        const conn=await mongoose.connect("mongodb://localhost:27017/kuku",{
+        const conn=await mongoose.connect("mongodb://localhost:27017/career",{
             useNewUrlParser: true, 
     useUnifiedTopology: true,
     family: 4,

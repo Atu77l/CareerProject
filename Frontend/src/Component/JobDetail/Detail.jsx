@@ -15,12 +15,11 @@ const Detail = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `http://localhost:4000/get/contact/${params.id}`,
+      url: `http://localhost:4000/get/jobDetail/${params.id}`,
       headers: {
         "Content-Type": "application/json",
       },
     };
-
     axios
       .request(config)
 
@@ -40,40 +39,39 @@ const Detail = () => {
   return (
     <>
      <Navbar/>
-      <div className="">
-        <div className="flex flex-row w-4/6">
-          <img src={jobdetail.imagelink} alt="" className="h-32 w-32  m-14 " />
+      <div className="m-5 p-5 ">
+        <div className="flex flex-row ">
           <div className="">
-            <div className="text-2xl m-5 font-bold text-black">
-              {jobdetail.companyname}
+            <div className="text-4xl text-blue-700 font-bold mt-5 mb-5">
+              {jobdetail?.companyname}
             </div>
-            <div className="font-medium mb-2 text-xl">About {jobdetail.companyname} Company:</div>
+            <div className="font-medium mb-2 text-xl text-orange-600">About Company:</div>
             <p>
-              {jobdetail.about}
+              {jobdetail?.about}
             </p>
-            <div className="font-medium mt-5 mb-2 text-xl">
+            <div className="font-medium mt-5 mb-2 text-xl text-orange-600">
               What You will be doing:
             </div>
             <p className="mb-5">
-             {jobdetail.joboverview}
+             {jobdetail.jobOverview}
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols ">
-          <div className="text-xl text-black ml-10  font-medium">
-            Package :<span className="font-normal">{jobdetail.package}</span>
+        <div className="grid grid-cols-1">
+          <div className="text-xl text-black  font-medium">
+            Package :<span className="font-normal">{jobdetail?.package}</span>
           </div>
-          <div className="text-xl text-black ml-10  font-medium">
-            Qualification :<span className="font-normal">{jobdetail.qualification}</span>
+          <div className="text-xl text-black  font-medium">
+            Qualification :<span className="font-normal">{jobdetail?.qualification}</span>
           </div>
-          <div className="text-xl text-black ml-10  font-medium">
-            Experience :<span className="font-normal">{jobdetail.experience}</span>{" "}
+          <div className="text-xl text-black  font-medium">
+            Experience :<span className="font-normal">{jobdetail?.experience}</span>{" "}
           </div>
-          <div className="text-xl text-black ml-10  font-medium">
-            Location:<span className="font-normal">{jobdetail.location}</span>
+          <div className="text-xl text-black  font-medium">
+            Location:<span className="font-normal">{jobdetail?.location}</span>
           </div>
-          <div className="text-xl text-black ml-10 mb-5 font-medium">
+          <div className="text-xl text-black mb-5 font-medium">
             <Link to={jobdetail.applylink} target="_blank"><span className="text-[blue] hover:underline">Click here</span></Link> to
             Apply !!
           </div>
@@ -86,11 +84,7 @@ const Detail = () => {
           <TelegramIcon sx={{ color: "white" }} className="ml-3" />
           <InstagramIcon sx={{ color: "white" }} className="ml-3" />
         </div>
-<<<<<<< HEAD
-        <div className="text-center text-white pt-8 font-bold text-xl">
-=======
         <div className="text-center text-white pt-6 font-bold text-xl">
->>>>>>> akki
           Copyright © 2022 Fast Careers - All Rights Reserved.
         </div>
       </div>

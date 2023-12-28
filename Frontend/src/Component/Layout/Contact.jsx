@@ -41,87 +41,59 @@ const Contact = () => {
   }
   return (
     <>
-<<<<<<< HEAD
-      <div className="h-screen">
-        <Navbar />
-        <div className="">
-          <hr className="ml-10 mr-10 mt-10 font-bold" />
-          <hr className="ml-10 mr-10 mt-1 font-bold" />
-          <div className="text-center justify-center text-4xl mt-2 font-serif">Contact Us</div>
-          <div className="flex text-center justify-center ">
-            <div className=" grid grid-cols-1 mt-8 m-10 outline-0  ">
-=======
       <div className="">
         <Navbar />
-        <div className="mt-5">
-        
-          <div className=" flex text-center justify-center text-4xl mt-32 font-serif">Contact Us</div>
-          <div className="flex text-center justify-center ">
-            <div className=" grid grid-cols-1 mt-8 m-10 outline-0  outline-none  ">
->>>>>>> akki
+        <div className="flex text-center justify-center">
+          <div className="flex flex-col w-3/5">
+          
+          <div className="text-6xl font-bold mt-20 font-serif text-left">Contact Me</div>
+            <div className=" grid grid-cols-1 mt-8 outline-0  outline-none  ">
               <input
                 type="text"
                 placeholder="Name*"
                 value={name}
                 onChange={(e) => { setname(e.target.value) }}
-                className=" p-4 h-10   border-2 border-[gray] rounded-md w-96"
+                className=" p-4 h-10  border-2 border-black text-xl rounded-md"
               />
               <input
                 type="text"
                 placeholder="Email*"
                 value={email}
                 onChange={(e) => { setemail(e.target.value) }}
-                className=" p-4 h-10 mt-3 border-2 border-[gray] rounded-md w-96"
+                className=" p-4 h-10 mt-3 border-2 border-black text-xl rounded-md"
               />
               <input
                 type="text"
                 placeholder="Phone No*"
                 value={phone}
                 onChange={(e) => { setphone(e.target.value) }}
-                className=" p-4 mt-3   h-10  border-2 border-[gray] rounded-md w-96"
+                className=" p-4 mt-3   h-10  border-2 border-black text-xl rounded-md"
               />
               <input
                 type="text"
                 placeholder="Message"
                 value={message}
                 onChange={(e) => { setmessage(e.target.value) }}
-                className=" p-4 mt-3  h-10 border-2 border-[gray] rounded-md w-96"
+                className=" p-4 mt-3  h-10 border-2 border-black text-xl rounded-md"
               />
-<<<<<<< HEAD
-              <textarea value={description} className="h-36 mt-3 border-2 border-[gray] p-4 rounded-md" placeholder="Description*" onChange={(e) => { setDescription(e.target.value) }} />
-=======
-              <textarea value={description} className="h-36 mt-3 border-2 border-[gray] p-2 pl-4 rounded-md" placeholder="Description*" onChange={(e) => { setDescription(e.target.value) }} />
->>>>>>> akki
+              <textarea value={description} className="h-36 mt-3 border-2 border-black text-xl p-2 pl-4 rounded-md" placeholder="Description*" onChange={(e) => { setDescription(e.target.value) }} />
 
-              <div className="grid grid-cols-1 mt-2">
-                <button className="h-10 mt-3  bg-[#287dd1] rounded-xl font-medium text-white w-96" onClick={onSubmit}>
+              <div className="grid grid-cols-1 mt-2 mb-5">
+                <button className="h-10 mt-3  bg-[#287dd1] rounded-full font-medium text-white w-36" onClick={onSubmit}>
                   Send Message
                 </button>
-<<<<<<< HEAD
-                <div className="text-sm mt-1 mb-5 ">
-=======
-                <div className="text-sm mt-1  ">
->>>>>>> akki
-                  This site is protected by reCAPTCHA and the Google<br />
-                  <span className="text-[green]">Privacy Policy</span> and{" "}
-                  <span className="text-[green]">Terms of Service</span> apply.
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <div className="bg-[#7eaad5] w-screen h-40">
-=======
-      <div className="bg-blue-500  h-40 ">
->>>>>>> akki
-        <div className="text-center pt-10">
+      <div className="bg-blue-500 fixed left-0 bottom-0 w-full p-2 ">
+        <div className="text-center">
           <LinkedInIcon sx={{ color: "white" }} />
           <TelegramIcon sx={{ color: "white" }} className="ml-3" />
           <InstagramIcon sx={{ color: "white" }} className="ml-3" />
         </div>
-        <div className="text-center text-white pt-8 font-bold text-xl">
+        <div className="text-center text-white font-bold text-xl">
           Copyright © 2022 Fast Careers - All Rights Reserved.
         </div>
       </div>

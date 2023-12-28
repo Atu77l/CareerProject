@@ -16,12 +16,19 @@ app.use(express.json());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(cors());
+const { ObjectId } = mongoose.Types; // Import ObjectId from mongoose.Types
 
 mongoose.set("strictQuery", true);
 connectDB();
 
 app.get('/get',async(req,res)=>{
     const data=await User.find();
+    res.send({"detail":data})
+})
+app.get('/get/jobDetail/:id',async(req,res)=>{
+    console.log(req.params.id)
+    console.log('hello world')
+    const data=await User.find({'_id':ObjectId(req.params.id)});
     res.send({"detail":data})
 })
 app.post('/save',async(req,res) =>{
@@ -52,6 +59,7 @@ app.get('/get/contact',async(req,res)=>{
     const data=await Contact.find();
     res.send({"detail":data})
 })
+
 app.get('/get/contact/:id',async(req,res)=>{
     const data=await Contact.find({'_id':req.params.id});
     res.send({"detail":data})

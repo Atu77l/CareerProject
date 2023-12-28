@@ -14,7 +14,6 @@ const Carousel = () => {
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
-        <ListIcon onClick={()=>{setShow(!show)}}/>
           <li
             data-target="#carouselExampleIndicators"
             data-slide-to="0"
@@ -23,7 +22,7 @@ const Carousel = () => {
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
-        <div className="carousel-inner">
+        <div className="carousel-inner h-52">
           <div className="carousel-item active">
             <img
               className="d-block"
@@ -80,8 +79,4 @@ const Carousel = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Carousel;
-=======
-export default Carousel;
->>>>>>> akki
