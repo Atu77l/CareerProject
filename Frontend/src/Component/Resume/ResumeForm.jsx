@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const ResumeForm = (props) => {
   const [Name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [summary, setSummary] = useState("");

@@ -11,6 +11,10 @@ import ResumePdf from '../src/Component/Resume/DownloadPdf'
 import Design from './Component/Design/Design'
 import Page_404 from './Component/Layout/Page_404'
 import Dashboard from './Component/Dashboard/Dashboard'
+import Login from './Component/Layout/Login'
+import SignUp from './Component/Layout/SignUp'
+import Applyjob from './Component/ApplyJob/Applyjob'
+import Descriptive from './Component/ApplyJob/Descriptive'
 
 const App = () => {
   let data={
@@ -37,12 +41,16 @@ const App = () => {
     <>
   <Router>
         <Routes>
-        <Route path='/dashboard' exact element={<Dashboard/>}/>
         <Route path='/' exact element={<Home/>}/>
+        <Route path='/dashboard' exact element={<Dashboard/>}/>
+        <Route path='/login' exact element={<Login/>}/>
+        <Route path='/signup' exact element={<SignUp/>}/>
         <Route path='/about' exact element={<Aboutus/>}/>
         <Route path='/contact' exact element={<Contact/>}/>
         <Route path='/admin/data' exact element={<Data/>}/>
         <Route path='/detail/:id' exact element={<Detail/>}/>
+        <Route path='/applyjob' exact element={<Applyjob/>}/>
+        <Route path='/description' exact element={<Descriptive/>}/>
         <Route path='/resume_result' exact element={<ResumePdf func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='/resume' exact element={<Resume func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='*' element={<Page_404/>}/>

@@ -1,11 +1,8 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import image1 from "../../assests/1.jpg";
 import image2 from "../../assests/2.jpg";
 import image3 from "../../assests/3.jpg";
-import ListIcon from '@mui/icons-material/List';
-import Navbar from "./Sidebar";
 const Carousel = () => {
-  const [show,setShow]=useState(false);
   return (
     <>
       <div

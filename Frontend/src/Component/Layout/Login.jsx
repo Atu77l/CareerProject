@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import logo from './../../assets/logo12.png'
+import logo from './../../assests/FirstStephub.png'
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import login1 from './../../assets/login.png'
+import login1 from './../../assests/13.jpg'
 import secureLocalStorage from "react-secure-storage";
-import { LOGIN_URL } from "../../constant/constant";
-import jwtDecode from "jwt-decode";
+import { LOGIN_URL } from "./../Constant/Constant";
 import { Audio } from 'react-loader-spinner'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -82,29 +80,29 @@ const Login = () => {
             return;
         }
     }
-    const checkTokenValidity = async () => {
-        try {
-            const token = await secureLocalStorage.getItem('token'); // Replace with your actual token key
-            if (token) {
-                const decodedToken = jwtDecode(token);
-                const currentTime = Date.now() / 1000; // Convert milliseconds to seconds
+    // const checkTokenValidity = async () => {
+    //     try {
+    //         const token = await secureLocalStorage.getItem('token'); // Replace with your actual token key
+    //         if (token) {
+    //             const decodedToken = jwtDecode(token);
+    //             const currentTime = Date.now() / 1000; // Convert milliseconds to seconds
 
-                if (decodedToken.exp < currentTime) {
-                    // Token has expired
-                    navigate('/login'); // Assuming you want to redirect to the login page
-                } else {
-                    // Token is valid, navigate to dashboard
-                    navigate('/');
-                }
-            }
-        } catch (error) {
-            // Handle any errors that might occur during token retrieval
-            console.error("Error while checking token validity:", error);
-        }
-    };
-    useEffect(() => {
-        checkTokenValidity();
-    }, [navigate]);
+    //             if (decodedToken.exp < currentTime) {
+    //                 // Token has expired
+    //                 navigate('/login'); // Assuming you want to redirect to the login page
+    //             } else {
+    //                 // Token is valid, navigate to dashboard
+    //                 navigate('/');
+    //             }
+    //         }
+    //     } catch (error) {
+    //         // Handle any errors that might occur during token retrieval
+    //         console.error("Error while checking token validity:", error);
+    //     }
+    // };
+    // useEffect(() => {
+    //     checkTokenValidity();
+    // }, [navigate]);
 
     useEffect(() => {
         if (wait === true) {
@@ -133,14 +131,13 @@ const Login = () => {
                 <div className="hidden lg:block m-24">
                     <img src={login1} alt="student" className="sm:h-4/5"></img>
                 </div>
-                <div className="flex flex-col m-10  p-5 bg-white rounded-lg shadow">
-                    <div className="text-[#3F4547] text-3xl font-bold ml-5 lg:w-8/12" >
+                <div className="flex flex-col p-5 bg-white rounded-lg shadow">
+                    <div className="text-[#3F4547] text-3xl font-bold ml-5" >
                         <img src={logo} alt="logo" className="h-24 w-24" ></img>
                     </div>
                     <div className="text-[#000000] text-3xl mt-5 ml-4" style={{ fontWeight: "700" }}> <h1>Account Login</h1>  </div>
                     <p className="text-[#8692A6] ml-4 mt-1 p-1 h-18">  If you have already registered, you can login with your username and password.</p>
-                    <div className="font-semibold ml-5">  Hello! Lets get started.. </div>
-                    <hr className="m-5"></hr>
+                    <div className="font-semibold mb-3 ml-4 p-1">  Hello! Lets get started.. </div>
                     <label className="ml-5 mt-1">Email</label>
                     <div className="text-center justify-center mr-4">
                         <input type="email" placeholder="Enter Email"

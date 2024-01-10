@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Navbar from '../Layout/Navbar'
 import axios from 'axios'
 
@@ -12,12 +12,8 @@ const Data = () => {
   const [qualification, setqualification] = useState("")
   const [link, setlink] = useState("")
   const [location, setlocation] = useState("")
-  const [imagelink, setimagelink] = useState("")
   const [joboverview, setjoboverview] = useState("")
-  const [link1, setGithubLink] = useState("")
-  const [code, setCode] = useState("")
-  const [title, setTitle] = useState("")
-  const [topic, setTopic] = useState("")
+
 
 
   const onSubmit = () => {

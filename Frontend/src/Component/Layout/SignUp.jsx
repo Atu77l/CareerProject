@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
-import logo from './../../assets/logo12.png'
-import login1 from './../../assets/signup.png'
-import { REGISTER_URL } from '../../constant/constant'
+import logo from './../../assests/FirstStephub.png'
+import login1 from './../../assests/12.jpg'
+import { REGISTER_URL } from './../Constant/Constant'
 import { ToastContainer, toast } from "react-toastify";
 import { Audio } from 'react-loader-spinner'
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -103,17 +103,16 @@ const Signup = () => {
                 <div className=" hidden lg:block lg:m-24 lg:ml-64">
                     <img src={login1} alt="student" className="lg:h-4/5"></img>
                 </div>
-                <div className="flex flex-col p-5 m-5 bg-white rounded-lg shadow lg:w-10/12 ">
+                <div className="flex flex-col p-5 m-3 bg-white rounded-lg shadow lg:w-10/12">
                     <div className="text-[#313c40] text-3xl font-bold ml-5">
                         <img src={logo} alt="logo" className="h-24 w-24" ></img>
                     </div>
-                    <div className="text-[#000000] text-3xl mt-5 ml-4" style={{ fontWeight: "700" }}>
+                    <div className="text-[#000000] text-3xl mt-2 ml-4" style={{ fontWeight: "700" }}>
                         <h1>Create Account</h1>
                     </div>
-                    <div className="ml-5 font-semibold">
+                    <div className="ml-4 mb-3 font-semibold">
                         Hello! Let's get started...
                     </div>
-                    <hr className="m-5"></hr>
                     <div className="grid grid-cols-1 sm:grid-cols-2">
                         <div className="flex flex-col">
                             <label className="ml-5 text-[#494949] pl-1">Full Name*</label>
@@ -125,7 +124,7 @@ const Signup = () => {
                             </div>
                         </div>
                         <div className="flex flex-col">
-                            <label className="ml-5 mt-5 text-[#494949] pl-1 sm:mt-0">Email Address*
+                            <label className="ml-5 text-[#494949] pl-1 sm:mt-0">Email Address*
                             </label>
                             <div className="text-center justify-center">
                                 <input type="email" required placeholder="Enter Email"
@@ -135,16 +134,16 @@ const Signup = () => {
                             </div>
                         </div>
                         <div className="flex flex-col">
-                            <label className="mt-5 ml-5 text-[#494949] pl-1">UserName*</label>
+                            <label className="ml-5 text-[#494949] pl-1">UserName*</label>
                             <div className="text-center justify-center">
                                 <input type="text" required placeholder="Enter Username"
                                     className="mt-1 outline-0 h-10   border border-[#1565D8] pl-4 ml-4 rounded-lg w-11/12" value={username} onChange={(e) => {
                                         setUserName(e.target.value);
-                                    }} /></div>
+                                    }} />
+                            </div>
                         </div>
-
                         <div className="flex flex-col">
-                            <label className="mt-5 ml-5 text-[#494949] pl-1">Password*</label>
+                            <label className="ml-5 text-[#494949] pl-1">Password*</label>
                             {visible && <div className="flex flex-row border border-[#1565D8] ml-4 rounded-lg h-10" >
                                 <input type="text" placeholder="Enter Your Password"
                                     className="mr-5 outline-0  pl-4 w-full rounded-lg border-[#1565D8]" value={password}
@@ -158,12 +157,12 @@ const Signup = () => {
                                     value={password} onChange={(e) => { setpassword(e.target.value); }} />
                                 <VisibilityOffIcon sx={{ cursor: "pointer", marginLeft: "20px", marginRight: "10px", marginTop: "6px" }} onClick={() => { setVisible(true) }} />
                             </div>}
-                            
+
                             <div className="text-xs italic ml-5" style={{ color: warn === true ? "black" : "red" }}>Password: Min 7 chars, 1 lowercase, 1 uppercase, 1 digit, 1 special required</div>
                         </div>
 
                         <div className="flex flex-col">
-                            <label className="mt-5 ml-5 text-[#494949] pl-1">Confirm Password*</label>
+                            <label className="ml-5 text-[#494949] pl-1">Confirm Password*</label>
                             {visible && <div className="flex flex-row border border-[#1565D8] ml-4 rounded-lg h-10" >
                                 <input type="text" placeholder="Enter Your Password" className="mr-5 outline-0  pl-4 w-full rounded-lg border-[#1565D8]"
                                     value={cpassword} onChange={(e) => { setcpassword(e.target.value); }} />
@@ -178,7 +177,7 @@ const Signup = () => {
                             </div>}
                         </div>
                         <div className="flex flex-col">
-                            <label className="mt-5 ml-5 text-[#494949] pl-1">Address*</label>
+                            <label className="ml-5 text-[#494949] pl-1">Address*</label>
                             <div className="text-center justify-center">
                                 <input type="text" required placeholder="Enter Your Address"
                                     className="mt-1 outline-0 h-10  border border-[#1565D8] pl-4 ml-4 rounded-lg w-11/12" value={address}
@@ -196,14 +195,14 @@ const Signup = () => {
 
                     {wait && <div className="flex text-center justify-center"><Audio height="40" width="120" color='lightblue' ariaLabel='three-dots-loading' /></div>}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2">
-                        <div className="flex flex-row mt-2 ml-5">
+                    <div className="grid grid-cols-1">
+                        <div className="flex flex-row mt-2 ml-4">
                             <div className="text-[#3F4547]">Already Registered!!?</div>
-                            <Link to='/'><div className="text-[#0369a8] pl-1 ml-5 underline cursor-pointer">Sign In</div></Link>
+                            <Link to='/'><div className="text-[#0369a8] pl-1 ml-5 underline cursor-pointer flex-grow">Sign In</div></Link>
                         </div>
-                        <div className="flex flex-row mt-2 ml-5">
+                        <div className="flex flex-row mt-2 ml-4">
                             <div className="text-[#3F4547]">Forgot Password!!?</div>
-                            <Link to='/forget_password' className="text-[#0369a8] pl-1 ml-5 underline cursor-pointer">Forgot Password</Link>
+                            <Link to='/forget_password' className="text-[#0369a8] pl-1 ml-5 underline cursor-pointer flex-grow">Forgot Password</Link>
                         </div>
                     </div>
                 </div>
