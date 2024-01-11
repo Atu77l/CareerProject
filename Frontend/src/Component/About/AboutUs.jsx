@@ -3,17 +3,17 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Navbar from "../Layout/Navbar";
+import jobseeker from './../../assests/jobseeker.jpg'
 const AboutUs = () => {
   return (
     <>
      <Navbar/>
-      <div className="ml-10 mt-28 font-bold text-4xl font-sans">
+     <div style={{backgroundImage:`url(${jobseeker})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}}>
+      <div className="ml-10 mt-24 mb-2 text-center justify-center font-serif font-bold text-4xl">
         ABOUT US
       </div>
-      <hr className=" bg-black" />
-
       <div className="">
-        <p className="text-xl font-thin  pl-10 ">
+        <p className="text-xl font-serif font-medium  pl-10 ">
 
         Assisting job seekers in discovering suitable opportunities to advance and develop their careers is a highly rewarding endeavor. As previously mentioned, it can be a challenging task to find a job that aligns with one's interests and skill set. However, a platform like Fast Career, which consolidates and presents all pertinent information in one place, can certainly simplify the process.
         <br/><br/>
@@ -24,6 +24,7 @@ Another potential advantage of the platform is its ability to assist organizatio
 Overall, Fast Career appears to have the potential to be a valuable resource for both job seekers and employers. By providing a comprehensive platform that offers information, resources, and connections, Fast Career can streamline the job search process and contribute to the growth and development of individuals and organizations alike.
           <br /><br/>
         </p>
+        </div>
 
         <div className="bg-blue-500 fixed left-0 bottom-0 w-full p-2 ">
           <div className="text-center pt-10">

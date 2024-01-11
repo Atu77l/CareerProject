@@ -7,6 +7,8 @@ const connectDB=async ()=>{
             useNewUrlParser: true, 
     useUnifiedTopology: true,
     family: 4,
+                serverSelectionTimeoutMS: 5000, // Set your desired timeout value
+
         });
         console.log(`Mongo DB Connected`);
     }

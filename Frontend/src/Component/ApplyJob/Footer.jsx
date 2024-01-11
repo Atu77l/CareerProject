@@ -8,7 +8,7 @@ import logo from './../../assests/FirstStephub.png'
 const FooterVersion2 = () => {
   return (
     <>
-      <div className="grid grid-cols-6 pt-5 pl-5 pb-5 max-md:grid-cols-1  border-t-8 border-white" style={{ backgroundColor: "#DAECF2", color: "#6d6f90" }}>
+      <div className="grid grid-cols-6 pt-5 pl-5 pb-5 max-md:grid-cols-1  border-t-8 border-white bg-purple-400 font-medium">
         {/* 1st Box  */}
 
         {/* 2nd Box */}
@@ -50,9 +50,9 @@ const FooterVersion2 = () => {
           <div className="mt-3">Sector 62,Noida Uttar Pradesh</div>
         </div>
       </div>
-      <div className='bg-[#E5F4FF]' style={{ backgroundColor: "#DAECF2", color: "#6d6f90" }}>
+      <div className='bg-purple-400 font-medium'>
         <hr className='bg-white h-1 ml-10 mr-10'></hr>
-        <div className="text-center mt-5 pb-5 text-l bg-[#E5F4FF]" style={{ backgroundColor: "#DAECF2", color: "#6d6f90" }}>2022-2023 Copyright © All rights reserved || For Contact <span className="italic text-blue-600">support.dftl@damyant.com</span> </div>
+        <div className="text-center mt-5 pb-5 text-l bg-purple-400 font-medium">2022-2023 Copyright © All rights reserved || For Contact <span className="italic text-blue-600">support.dftl@damyant.com</span> </div>
       </div>
     </>
   )

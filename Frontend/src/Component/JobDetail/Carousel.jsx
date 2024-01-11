@@ -22,26 +22,26 @@ const Carousel = () => {
         <div className="carousel-inner h-52">
           <div className="carousel-item active">
             <img
-              className="d-block"
+              className="d-block w-full"
               src={image1}
               alt="First slide"
-              style={{ height: "400px", width: "1500px" }}
+              style={{ height: "400px" }}
             />
           </div>
           <div className="carousel-item">
             <img
-              className="d-block"
+              className="d-block w-full"
               src={image2}
               alt="Second slide"
-              style={{ height: "400px", width: "1500px" }}
+              style={{ height: "400px" }}
             />
           </div>
           <div className="carousel-item">
             <img
-              className="d-block"
+              className="d-block w-full"
               src={image3}
               alt="Third slide"
-              style={{ height: "400px", width: "1500px" }}
+              style={{ height: "400px" }}
             />
           </div>
         </div>

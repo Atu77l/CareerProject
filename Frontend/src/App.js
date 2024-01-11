@@ -1,20 +1,20 @@
 import React,{useEffect,useState} from 'react'
-import Contact from './Component/Layout/Contact'
-import  Aboutus from './Component/About/AboutUs'
-import Home from './Component/Dashboard/Home'
-import Data from './Component/Admin/Data'
+
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import './App.css'
-import Detail from './Component/JobDetail/Detail'
-import Resume from './Component/Resume/Resume'
-import ResumePdf from '../src/Component/Resume/DownloadPdf'
-import Design from './Component/Design/Design'
-import Page_404 from './Component/Layout/Page_404'
-import Dashboard from './Component/Dashboard/Dashboard'
+//Job
+import Home from './Component/JobDetail/Home'
 import Login from './Component/Layout/Login'
 import SignUp from './Component/Layout/SignUp'
-import Applyjob from './Component/ApplyJob/Applyjob'
-import Descriptive from './Component/ApplyJob/Descriptive'
+import JobList from './Component/JobDetail/Job'
+import Detail from './Component/JobDetail/Detail'
+import Data from './Component/Admin/Data'
+import Contact from './Component/Layout/Contact'
+import  Aboutus from './Component/About/AboutUs'
+import Resume from './Component/Resume/Resume'
+import ResumePdf from '../src/Component/Resume/DownloadPdf'
+import Page_404 from './Component/Layout/Page_404'
+
 
 const App = () => {
   let data={
@@ -42,15 +42,13 @@ const App = () => {
   <Router>
         <Routes>
         <Route path='/' exact element={<Home/>}/>
-        <Route path='/dashboard' exact element={<Dashboard/>}/>
+        <Route path='/list' exact element={<JobList/>}/>
         <Route path='/login' exact element={<Login/>}/>
         <Route path='/signup' exact element={<SignUp/>}/>
         <Route path='/about' exact element={<Aboutus/>}/>
         <Route path='/contact' exact element={<Contact/>}/>
         <Route path='/admin/data' exact element={<Data/>}/>
         <Route path='/detail/:id' exact element={<Detail/>}/>
-        <Route path='/applyjob' exact element={<Applyjob/>}/>
-        <Route path='/description' exact element={<Descriptive/>}/>
         <Route path='/resume_result' exact element={<ResumePdf func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='/resume' exact element={<Resume func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='*' element={<Page_404/>}/>

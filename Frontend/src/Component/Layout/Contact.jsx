@@ -79,7 +79,7 @@ const Contact = () => {
               <textarea value={description} className="h-36 mt-3 border-2 border-black text-xl p-2 pl-4 rounded-md" placeholder="Description*" onChange={(e) => { setDescription(e.target.value) }} />
 
               <div className="grid grid-cols-1 mt-2 mb-5">
-                <button className="h-10 mt-3  bg-[#287dd1] rounded-full font-medium text-white w-36" onClick={onSubmit}>
+                <button className="h-10 mt-3  bg-[#287dd1] rounded-lg font-medium text-white w-36" onClick={onSubmit}>
                   Send Message
                 </button>
               </div>

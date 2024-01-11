@@ -99,11 +99,8 @@ const Signup = () => {
     return (
         <>
             <ToastContainer />
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className=" hidden lg:block lg:m-24 lg:ml-64">
-                    <img src={login1} alt="student" className="lg:h-4/5"></img>
-                </div>
-                <div className="flex flex-col p-5 m-3 bg-white rounded-lg shadow lg:w-10/12">
+            <div className="flex text-center justify-center mt-5">
+                <div className="flex flex-col p-1 m-3 bg-white rounded-lg shadow text-left border-blue-600 border-b-4 border-t-4">
                     <div className="text-[#313c40] text-3xl font-bold ml-5">
                         <img src={logo} alt="logo" className="h-24 w-24" ></img>
                     </div>

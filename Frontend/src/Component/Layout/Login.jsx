@@ -127,11 +127,8 @@ const Login = () => {
     return (
         <>
             <ToastContainer />
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="hidden lg:block m-24">
-                    <img src={login1} alt="student" className="sm:h-4/5"></img>
-                </div>
-                <div className="flex flex-col p-5 bg-white rounded-lg shadow">
+            <div className="flex text-center justify-center mt-5 ">
+                <div className="flex flex-col p-2 bg-white rounded-lg shadow text-left border-blue-600 border-b-4 border-t-4">
                     <div className="text-[#3F4547] text-3xl font-bold ml-5" >
                         <img src={logo} alt="logo" className="h-24 w-24" ></img>
                     </div>

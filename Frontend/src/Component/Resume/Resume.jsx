@@ -11,11 +11,8 @@ const Resume = (props) => {
   return (
     <div>
      <Navbar/>
-      <h1 className=" flex justify-center text-center mt-20 text-4xl font-bold  text-black rounded">Create Your Resume</h1>
-      <hr className="text-black bg-black"></hr>
-      <hr className="text-black bg-black"></hr>
-      <hr className="text-black bg-black"></hr>
-      <hr className="text-black bg-black"></hr>
+      <h1 className=" flex font-serif justify-center text-center mt-20 text-4xl font-bold  text-black rounded">Create Your Resume</h1>
+
 
       <ResumeForm func={props.func} resumedata={props.resumedata}/>
     

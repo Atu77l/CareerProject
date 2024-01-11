@@ -57,10 +57,8 @@ const ResumeForm = (props) => {
   };
 
   return (
-    <div className="  m-10 p-10 shadow-2xl   rounded-2xl ">
+    <div className="  m-10 p-10 shadow-2xl   rounded-2xl border-2 border-t-4 border-b-4 border-blue-600 ">
       <div className="grid grid-cols-1">
-       
-
         <label className="grid grid-cols-8  rounded-2xl text-xl font-serif  lg:ml-14  sm:-ml-14 mb-2">
           Name:
           <input
