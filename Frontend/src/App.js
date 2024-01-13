@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+import ProtectedRoute from './protectedRoute'
 
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import './App.css'
@@ -14,6 +15,7 @@ import  Aboutus from './Component/About/AboutUs'
 import Resume from './Component/Resume/Resume'
 import ResumePdf from '../src/Component/Resume/DownloadPdf'
 import Page_404 from './Component/Layout/Page_404'
+import AboutUs from './Component/About/AboutUs';
 
 
 const App = () => {
@@ -42,13 +44,13 @@ const App = () => {
   <Router>
         <Routes>
         <Route path='/' exact element={<Home/>}/>
-        <Route path='/list' exact element={<JobList/>}/>
+        <Route path='/list' exact element={<ProtectedRoute component={JobList}/>}/>
         <Route path='/login' exact element={<Login/>}/>
         <Route path='/signup' exact element={<SignUp/>}/>
-        <Route path='/about' exact element={<Aboutus/>}/>
-        <Route path='/contact' exact element={<Contact/>}/>
-        <Route path='/admin/data' exact element={<Data/>}/>
-        <Route path='/detail/:id' exact element={<Detail/>}/>
+        <Route path='/about' exact element={<ProtectedRoute component={AboutUs}/>}/>
+        <Route path='/contact' exact element={<ProtectedRoute component={Contact}/>}/>
+        <Route path='/admin/data' exact element={<ProtectedRoute component={Data}/>}/>
+        <Route path='/detail/:id' exact element={<ProtectedRoute component={Detail}/>}/>
         <Route path='/resume_result' exact element={<ResumePdf func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='/resume' exact element={<Resume func={setresumedata} resumedata={resumedata}/>}/>
         <Route path='*' element={<Page_404/>}/>

@@ -2,14 +2,14 @@ const express=require('express')
 const mongoose=require('mongoose')
 const bodyparser=require('body-parser')
 const connectDB=require('./connectDB')
-const User=require('./model')
-require('dotenv');
-const Jwt = require('jsonwebtoken');
+const job=require('./model/job')
+const user=require('./model/user')
+const Contact=require('./model/contact')
+const Design=require('./model/design')
+require('dotenv').config();
+const jwt = require('jsonwebtoken');
 const jwtKey = 'e-com';
 const cors=require('cors');
-const Contact=require('./contactmodel')
-const Design=require('./designmodel')
-
 
 const app=express();
 app.use(express.json());
@@ -21,63 +21,154 @@ const { ObjectId } = mongoose.Types; // Import ObjectId from mongoose.Types
 mongoose.set("strictQuery", true);
 connectDB();
 
-app.get('/get',async(req,res)=>{
-    const data=await User.find();
-    res.send({"detail":data})
+const verify_token=(token)=>{
+    try {
+        let secretKey=process.env.SECRET_KEY
+        const decoded = jwt.verify(token, secretKey);
+        console.log('decoded',decoded)
+        return true;
+    } catch (error) {
+        console.log(error,'error');
+        return false;
+    }
+}
+app.post('/login',async(req,res)=>{
+    try {
+        const email = req.body.email;
+        const password = req.body.password;
+
+        // Use findOne from Mongoose
+        const data = await user.findOne({ "email": email });
+        console.log(process.env.SECRET_KEY)
+        const token = jwt.sign({"email":email}, process.env.SECRET_KEY, { expiresIn: '1h' }); // You can customize the expiration time
+        
+        if (data) {
+            if (password === data.password) {
+                data.token=token;
+                console.log(data,'data')
+                return res.status(200).json({ "status": "success", "data": data,"token":token });
+            } else {
+                return res.status(200).json({ "status": "fail", "data": 'Invalid password' });
+            }
+        } else {
+            return res.status(200).json({ "status": "fail", "data": 'Email does not exist' });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ "status": "fail", "data": "An error occurred" });
+    }
 })
-app.get('/get/jobDetail/:id',async(req,res)=>{
-    console.log(req.params.id)
-    console.log('hello world')
-    const data=await User.find({'_id':ObjectId(req.params.id)});
-    res.send({"detail":data})
+app.post('/register',async(req,res)=>{
+   try {
+      console.log(req.body,'body')
+      const new_user=new user(req.body);
+      const response=await new_user.save();
+      return res.status(200).json({ "data": response });
+    } catch (error) {
+      console.log(error,'error')
+     return res.status(500).json({ "error": "An error occurred" });
+   }
 })
-app.post('/save',async(req,res) =>{
-    console.log(req.body);
-    const data=req.body;
-    const user=new User(data);
-    const result=await user.save();
-    res.send({"result":result});
-   
-})
-app.post('/save_design',async(req,res) =>{
-    console.log(req.body);
-    const data=req.body;
-    const design=new Design(data);
-    const result=await design.save();
-    res.send({"result":result});
-   
+app.get('/job',async(req,res)=>{
+    try {
+        const data=await job.find();
+        console.log(data,'data')
+        return res.status(200).json({"data":data})
+    } catch (error) {
+        console.log(error,'error')
+        return res.status(500).json({"error":"error message"})  
+    }
 })
 
-app.post('/contact',async(req,res) =>{
-    console.log(req.body);
-    const data=req.body;
-    const contact=new Contact(data);
-    const result=await contact.save();
-    res.send({"result":result});
-})
-app.get('/get/contact',async(req,res)=>{
-    const data=await Contact.find();
-    res.send({"detail":data})
+app.get('/job/:id',async(req,res)=>{
+    try {
+        const data=await job.find({'_id':ObjectId(req.params.id)});
+        res.status(200).json({"data":data});
+    } catch (error) {
+        res.status(500).json({"error":"Error Message"}) 
+    }
 })
 
-app.get('/get/contact/:id',async(req,res)=>{
-    const data=await Contact.find({'_id':req.params.id});
-    res.send({"detail":data})
-})
-app.get('/get/design',async(req,res)=>{
-    const data=await Design.find();
-    res.send({"detail":data})
-})
-app.delete('/delete/:id',async(req,res)=>{
-    const data=await User.deleteOne({ _id: req.params.id });
-    res.send(JSON.stringify(data));
+app.post('/addjob',async(req,res) =>{
+    try {
+        const new_job=new job(req.body);
+        console.log(req.body)
+        const result=await new_job.save();
+        return res.status(200).json({"data":result});
+    }catch (error) {
+        console.log(error)
+        return res.status(500).json({"error":"error message"})
+    }
 })
 
-app.patch('/update/:id', async(req,res)=>{
-    const data=User.findOne({_id:req.params.id});
-    const response=await User.updateOne({ _id: req.params.id },
-        { $set: req.body });
-    res.send(response);
+app.delete('/deletejob/:id',async(req,res)=>{
+    try {
+        const data=await job.deleteOne({ _id: req.params.id });
+        return res.status(200).json({"data":data});
+    } catch (error) {
+        return res.status(500).json({"error":"error message"})
+    }
+})
+
+app.patch('/updatejob/:id', async(req,res)=>{
+    try {
+        const data=job.findOne({_id:req.params.id});
+        const response=await job.updateOne({ _id: req.params.id },{ $set: req.body });
+        return res.status(200).json({"data":response});
+    } catch (error) {
+        return res.status(500).json({"error":error})
+    }
+})
+
+
+app.post('/addcontact',async(req,res) =>{
+    try {
+        console.log(req.body);
+        const data=req.body;
+        const contact=new Contact(data);
+        const result=await contact.save();
+        return res.status(200).send({"data":result});
+    } catch (error) {
+        return res.status(500).send({"error":error})   
+    }
+    
+})
+app.get('/contact',async(req,res)=>{
+    try {
+        const data=await Contact.find();
+        return res.status(200).send({"data":data})
+    } catch (error) {
+        return res.status(500).json({"error":error})
+    }
+})
+
+app.get('/contact/:id',async(req,res)=>{
+    try {
+        const data=await Contact.find({'_id':req.params.id});
+        return res.status(200).jsons({"detail":data})
+    } catch (error) {
+        return res.status(500).json({"error":error})
+    }
+})
+app.get('/design',async(req,res)=>{
+    try {
+        const data=await Design.find();
+        return res.status(200).json({"detail":data})
+    } catch (error) {
+        return res.status(500).json({"error":error})
+    }
+})
+
+app.post('/addDesign',async(req,res) =>{
+    try {
+        console.log(req.body);
+        const data=req.body;
+        const design=new Design(data);
+        const result=await design.save();
+        res.status(200).json({"data":result}); 
+    } catch (error) {
+        return res.status(500).json({"error":"error message"})
+    } 
 })
 
 app.listen(4000,()=>{

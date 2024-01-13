@@ -47,8 +47,10 @@ const Signup = () => {
         return hasLowercase && hasUppercase && hasDigit && hasSpecialChars && isLengthValid;
     }
     const handlesubmit = () => {
-        if (name && email && username && password && address && warn) {
-            const data = { "full_name": name, "email": email, "username": username, "date_of_birth": dob, "password": password, "address": address };
+        console.log(name,email,username,password,cpassword,address,warn)
+        if (name && email && password && address) {
+            const data = { "name": name, "email": email, "password": password, "address": address , "role":"jobseeker" };
+            console.log(data,'data')
             if (!checked) {
                 toast('Please Read Terms and Condition and Checked it')
                 setWait(false);
@@ -64,17 +66,11 @@ const Signup = () => {
                 return;
             }
             else {
-                const config = {
-                    method: 'post',
-                    url: REGISTER_URL,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    data: data
-                };
+                const config = { method: 'post', url: REGISTER_URL, headers: { 'Content-Type': 'application/json'},data: data };
                 axios.request(config)
                     .then((response) => {
-                        setname(""); setemail(""); setdob(""); setpassword(""); setaddress(""); setWait(false); navigate('/login');
+                        // setname(""); setemail(""); setdob(""); setpassword(""); setaddress(""); setWait(false); navigate('/login');
+                    navigate('/login');
                     })
                     .catch((error) => {
                         toast(error.response.data.message); setWait(false);

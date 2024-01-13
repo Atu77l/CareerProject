@@ -33,29 +33,19 @@ const Login = () => {
             return;
         }
         const data = { "email": email, "password": password }
-        const config = {
-            method: 'post',
-            maxBodyLength: Infinity,
-            url: LOGIN_URL,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            data: data
-        };
+        console.log(data,'data');
+        const config = { method: 'post', maxBodyLength: Infinity, url: LOGIN_URL,headers: {
+                'Content-Type': 'application/json'},data: data };
         if (email !== "" && password !== "") {
             axios.request(config)
                 .then((response) => {
-                    const result = response?.data;
+                    const result = response?.data?.data;
                     console.log("result at login", result);
-                    secureLocalStorage.setItem('token', result.token)
+                    secureLocalStorage.setItem('token', response.data.token)
                     secureLocalStorage.setItem('email', result.email)
                     secureLocalStorage.setItem('name', result.name)
-                    secureLocalStorage.setItem('id', result.id)
+                    // secureLocalStorage.setItem('id', result.id)
                     secureLocalStorage.setItem('role', result.role)
-                    if (result?.profilePic != null) {
-                        secureLocalStorage.setItem('profilePic', result?.profilePic);
-                    }
-                    secureLocalStorage.setItem('active', result.active)
                     if (rememberMe) {
                         secureLocalStorage.setItem('password', password);
                         localStorage.setItem('remember', "true");
@@ -66,7 +56,7 @@ const Login = () => {
                     setemail("")
                     setpassword("")
                     setWait(false)
-                    navigate('/');
+                    navigate('/list');
                 }
                 )
                 .catch((error) => {
@@ -80,29 +70,7 @@ const Login = () => {
             return;
         }
     }
-    // const checkTokenValidity = async () => {
-    //     try {
-    //         const token = await secureLocalStorage.getItem('token'); // Replace with your actual token key
-    //         if (token) {
-    //             const decodedToken = jwtDecode(token);
-    //             const currentTime = Date.now() / 1000; // Convert milliseconds to seconds
-
-    //             if (decodedToken.exp < currentTime) {
-    //                 // Token has expired
-    //                 navigate('/login'); // Assuming you want to redirect to the login page
-    //             } else {
-    //                 // Token is valid, navigate to dashboard
-    //                 navigate('/');
-    //             }
-    //         }
-    //     } catch (error) {
-    //         // Handle any errors that might occur during token retrieval
-    //         console.error("Error while checking token validity:", error);
-    //     }
-    // };
-    // useEffect(() => {
-    //     checkTokenValidity();
-    // }, [navigate]);
+   
 
     useEffect(() => {
         if (wait === true) {

@@ -4,19 +4,15 @@ import AddIcon from "@mui/icons-material/Add";
 import MessageIcon from "@mui/icons-material/Message";
 import Message from "../Dashboard/Message";
 import axios from "axios";
+import { GET_JOB } from "../Constant/Constant";
+import secureLocalStorage from "react-secure-storage";
 
 const Box = () => {
   const [handle,sethandle]=useState(false)
   const [jobDetail,setjobDetail]=useState([])
   const fetchData=()=>{
-    let config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: 'http://localhost:4000/get',
-      headers: { 
-        'Content-Type': 'application/json'
-      }
-    };
+    const token=secureLocalStorage.getItem('token')
+    let config = { method: 'get', maxBodyLength: Infinity, url: GET_JOB, headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },};
     
     axios.request(config)
     .then((response) => {

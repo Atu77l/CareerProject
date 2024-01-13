@@ -4,6 +4,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import axios from "axios";
 import Navbar from "./Navbar";
+import { ADD_CONTACT } from "../Constant/Constant";
+import secureLocalStorage from "react-secure-storage";
 
 const Contact = () => {
   const [name, setname] = useState("")
@@ -15,18 +17,8 @@ const Contact = () => {
   const onSubmit = () => {
     const data = { "name": name, "email": email, "phone": phone, "message": message, "description": description }
     console.log(data)
-
-    let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'http://localhost:4000/contact',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: data
-    };
-
-
+    const token=secureLocalStorage.getItem('token')
+    let config = { method: 'post', maxBodyLength: Infinity, url: ADD_CONTACT, headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` }, data: data };
     axios.request(config)
       .then((response) => {
         console.log(JSON.stringify(response.data));

@@ -3,37 +3,24 @@ const mongoose=require('mongoose');
 
 const user=mongoose.Schema(
     {
-        companyname:{
+        name:{
             type:String,
             required:true
         },
-        experience:{
+        email:{
             type:String,
             required:true
         },
-        package:{
+        password:{
             type:String,
             required:true
         },
-        about:{
-            type:String,
-            required:true
-        },
-        qualification:{
-            type:String,
-            required:true
-        },
-        link:{
+        address:{
             type:String,
             required:true
 
         },
-        location:{
-            type:String,
-            required:true
-        },
-        jobOverview:
-        {
+        role:{
             type:String,
             required:true
         }

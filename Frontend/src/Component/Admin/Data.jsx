@@ -1,149 +1,109 @@
-import React, { useState } from 'react'
-import Navbar from '../Layout/Navbar'
-import axios from 'axios'
+import React, { useState, useRef, useEffect } from 'react'
+import Footer from '../Layout/Footer';
+import Navbar from '../Layout/Navbar';
+import { ADD_JOB } from './../Constant/Constant'
+import secureLocalStorage from "react-secure-storage";
+import axios from 'axios';
 
-
-const Data = () => {
-  const [companyname, setcompanyname] = useState("")
-  const [experience, setexperience] = useState("")
-  const [package1, setpackage] = useState("")
-  const [about, setabout] = useState("")
-  const [companydetail, setcompanydetail] = useState([])
-  const [qualification, setqualification] = useState("")
-  const [link, setlink] = useState("")
-  const [location, setlocation] = useState("")
-  const [joboverview, setjoboverview] = useState("")
-
-
-
-  const onSubmit = () => {
-    const data = { "companyname": companyname, "experience": experience, "package": package1, "about": about, "qualification": qualification, "link": link, "location": location, "jobOverview": joboverview }
-    console.log(data)
-
-    let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'http://localhost:4000/save',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: data
-    };
-
-    axios.request(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-        setcompanyname("")
-        setabout("")
-        setexperience("")
-        setpackage("")
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+const JobDetail = () => {
+  const ref = useRef();
+  const [education, setEducation] = useState("");
+  const [experience, setExperience] = useState("");
+  const [salary, setSalary] = useState("");
+  const [gender, setGender] = useState("");
+  const [work, setWork] = useState("");
+  const [role, setRole] = useState("Softwar");
+  const [test, setTest] = useState("");
+  const [time, setTime] = useState("");
+  const [description, setDescription] = useState("");
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
+  const [questionList, setQuestionList] = useState([]);
+  const [company, setCompany] = useState("");
+  const [link,setLink]=useState('')
+  const [location,setLocation]=useState('')
+  const [about,setAbout]=useState('')
+  const addJob = async () => {
+    try {
+      let data = {
+        "education": education, 'experience': experience, "salary": salary, "gender": gender, "work": work, "role": role,
+        "test": test, "time": time, "description": description, "questionList": questionList, "company": company,"link":link,
+        "about":about,"location":location,
+      }
+      console.log(data, 'data')
+      const token = secureLocalStorage.getItem('token')
+      console.log('token', token)
+      let config = { method: "post", maxBodyLength: Infinity, url: ADD_JOB, headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` }, data:data};
+      const result = await axios(config);
+      console.log(result);
+    } catch (error) {
+      console.log(error, 'error');
+    }
+  }
+  const addQuestion = () => {
+    setQuestionList([...questionList, { "question": question, "answer": answer }]);
+    setQuestion("");
+    setAnswer("");
   }
 
 
   return (
     <>
       <Navbar />
-      <div className="grid grid-cols-1 m-10 gap-4 ">
-        <div className='text-4xl font-bold text-left mt-20'>Job Detail</div>
-        <input
-          type="text"
-          placeholder="Company Name*"
-          value={companyname}
-          onChange={(e) => setcompanyname(e.target.value)}
-          className="p-3 border-2 border-black text-xl rounded-lg"
-        />
-        <input
-          type="text"
-          placeholder="Experience*"
-          value={experience}
-          onChange={(e) => setexperience(e.target.value)}
-          className="p-3 border-2 border-black text-xl rounded-lg"
-        />
-
-        <input
-          type="text"
-          placeholder="About*"
-          value={about}
-          onChange={(e) => { setabout(e.target.value) }}
-          className=" p-3 border-2 border-black text-xl rounded-lg"
-        />
-        <input
-          type="text"
-          placeholder="Package*"
-          value={package1}
-          onChange={(e) => { setpackage(e.target.value) }}
-          className=" p-3 border-2 border-black text-xl rounded-lg"
-        />
-
-        <input
-          type="text"
-          placeholder="Qualification*"
-          value={qualification}
-          onChange={(e) => { setqualification(e.target.value) }}
-          className=" p-3 border-2 border-black text-xl rounded-lg"
-        />
-
-
-        <input
-          type="text"
-          value={location}
-          placeholder="location*"
-          onChange={(e) => { setlocation(e.target.value) }}
-          className=" p-3 border-2 border-black text-xl rounded-lg"
-        />
-
-        <input
-          type="text"
-          value={link}
-          placeholder="Enter Company link*"
-          onChange={(e) => { setlink(e.target.value) }}
-          className=" p-3 border-2 border-black text-xl rounded-lg"
-        />
-
-
-        <input
-          type="text"
-          value={joboverview}
-          placeholder="Job Overview*"
-          onChange={(e) => { setjoboverview(e.target.value) }}
-          className=" p-3 border-2 border-black text-xl rounded-lg"
-        />
-        <button
-          className="py-3 bg-green-500 text-white rounded-lg font-semibold"
-          onClick={onSubmit}
-        >
-          Save in Database
-        </button>
+      <div className='m-10 mt-20 shadow-lg rounded-lg shadow-blue-500 p-5'>
+        <div className='text-center font-semibold text-4xl font-serif'>JobDetail</div>
+        <div className="text-left">
+          <div className='font-semibold text-xl'>Company</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={company} onChange={(e) => { setCompany(e.target.value); }} />
+          <div className='font-semibold text-xl'>Education</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={education} onChange={(e) => { setEducation(e.target.value); }} />
+          <div className='font-semibold text-xl'>Gender</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={gender} onChange={(e) => { setGender(e.target.value); }} />
+          <div className='font-semibold text-xl'>Experience</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={experience} onChange={(e) => { setExperience(e.target.value); }} />
+          <div className='font-semibold text-xl'>Salary</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={salary} onChange={(e) => { setSalary(e.target.value); }} />
+          <div className='font-semibold text-xl'>Work</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={work} onChange={(e) => { setWork(e.target.value); }} />
+          <div className='font-semibold text-xl'>Time</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={time} onChange={(e) => { setTime(e.target.value); }} />
+         
+          <div className='font-semibold text-xl'>Test</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={test} onChange={(e) => { setTest(e.target.value); }} />
+          <div className='font-semibold text-xl'>Link</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={link} onChange={(e) => { setLink(e.target.value); }} />
+          <div className='font-semibold text-xl'>Location</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={location} onChange={(e) => { setLocation(e.target.value); }} />
+         
+          <div className='font-semibold text-xl'>Role</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={role} onChange={(e) => { setRole(e.target.value); }} />
+          <div className='font-semibold text-xl'>Description</div>
+          <textarea type="text" className='border-2 border-black rounded-lg shadow-lg p-1 h-16 w-full' value={description} onChange={(e) => { setDescription(e.target.value); }} />
+          <div className='font-semibold text-xl'>About</div>
+          <textarea type="text" className='border-2 border-black rounded-lg shadow-lg p-1 h-16 w-full' value={about} onChange={(e) => { setAbout(e.target.value); }} />
+          <div className='font-semibold text-xl'>Question</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={question} onChange={(e) => { setQuestion(e.target.value); }} />
+          <div className='font-semibold text-xl'>Answer</div>
+          <input type="text" className='border-2 border-black rounded-lg shadow-lg p-1 w-full' value={answer} onChange={(e) => { setAnswer(e.target.value); }} />
+          <div className="bg-blue-500 rounded-lg text-white text-center justify-center font-semibold w-24 h-10 m-2 text-xl cursor-pointer" onClick={() => { addQuestion(); }}>Add</div>
+          <div className='border-2 rounded-lg p-2'>
+            {
+              questionList.map((item, key) => {
+                return (
+                  <div className='flex flex-col'>
+                    <div className='text-xl font-semibold'>{key}.{item.question}</div>
+                    <div className='text-xl'>Answer:{item.answer}</div>
+                  </div>
+                )
+              })
+            }
+          </div>
+          <div className="rounded-lg bg-blue-600 text-white text-center justify-center h-10 m-2 text-xl cursor-pointer" onClick={() => { addJob(); }}>Submit</div>
+        </div>
       </div>
-
-      {
-        companydetail.map((item, key) => {
-          return (
-            <div className="h-48 mx-8 rounded-lg shadow-2xl mt-10  flex flex-row">
-              <div className="flex flex-col pl-28">
-                <div className="pt-1 text-2xl font-medium">
-                  {item.companyname}
-                </div>
-                <div className="pt-3 font-normal text-xl">About Wipro:</div>
-                <div className="">
-                  {item.about}
-                  <span className="text-[green]">Continue Reading</span>
-                </div>
-                <div className="grid grid-cols-2">
-                  <div className="pt-3 font-normal text-xl">Experience Required:{item.experience}</div>
-                  <div className="pt-3 font-normal text-xl">Package:{item.package}</div>
-                </div>
-              </div>
-            </div>
-          )
-        })
-      }
+      <Footer />
     </>
   )
 }
 
-export default Data
+export default JobDetail
