@@ -1,3 +1,6 @@
+![Uploading Screenshot (81).png…]()
+![Screenshot (80)](https://github.com/Atu77l/CareerProject/assets/60789960/03c3c039-b020-4745-b75e-4a72812980d6)
+![Screenshot (79)](https://github.com/Atu77l/CareerProject/assets/60789960/5077dadf-0fd8-4bc7-8cee-6bd6d85b79e6)
 ![Screenshot (53)](https://github.com/Atu77l/CareerProject/assets/60789960/e5f4d057-9ebf-48b6-beeb-e25bf89e5e77)
 ![Screenshot (52)](https://github.com/Atu77l/CareerProject/assets/60789960/e469c31f-8efe-4808-aeaa-316388d7d468)
 ![Screenshot (51)](https://github.com/Atu77l/CareerProject/assets/60789960/09a4bf50-860f-482e-8623-642cd3d8730a)
